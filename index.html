@@ -134,37 +134,9 @@ var _hmt = _hmt || [];
   <div class="article-content">
     <div class="entry">
          
-        <!-- toc -->
-<ul>
-<li><a href="#一-类型与运算">一、类型与运算</a><ul>
-<li><a href="#1寻求帮助">1.寻求帮助</a></li>
-<li><a href="#2测试类型的方法-推荐3">2.测试类型的方法 （推荐3）</a></li>
-<li><a href="#3python数据类型哈希不可哈希">3.Python数据类型：哈希/不可哈希</a></li>
-<li><a href="#4数字常量">4.数字常量</a></li>
-<li><a href="#5数字的表达式操作符">5.数字的表达式操作符</a></li>
-<li><a href="#6整数可计算所占位数">6.整数可计算所占位数</a></li>
-<li><a href="#7repr和str的区别">7.repr和str的区别</a></li>
-<li><a href="#8数字相关模块">8.数字相关模块</a></li>
-<li><a href="#9集合set">9.集合set</a></li>
-<li><a href="#10冻结集合frozenset">10.冻结集合frozenset</a></li>
-<li><a href="#11布尔类型bool">11.布尔类型bool</a></li>
-<li><a href="#12动态类型简介">12.动态类型简介</a></li>
-<li><a href="#13常见字符串常量和表达式">13.常见字符串常量和表达式</a></li>
-<li><a href="#14内置str处理函数">14.内置str处理函数</a></li>
-<li><a href="#15字符串转换及另类拼接">15.字符串转换及另类拼接</a></li>
-<li><a href="#16字符串格式化">16.字符串格式化</a></li>
-<li><a href="#17索引和分片">17.索引和分片</a></li>
-<li><a href="#18常用列表常量和操作">18.常用列表常量和操作</a></li>
-<li><a href="#19常用字典常量和操作">19.常用字典常量和操作</a></li>
-<li><a href="#20文件基本操作">20.文件基本操作</a></li>
-<li><a href="#21其它">21.其它</a></li>
-</ul>
-</li>
-</ul>
-<!-- tocstop -->
-<h4 id="一、类型与运算"><a href="#一、类型与运算" class="headerlink" title="一、类型与运算"></a>一、类型与运算</h4><h5 id="1-寻求帮助"><a href="#1-寻求帮助" class="headerlink" title="1.寻求帮助"></a>1.寻求帮助</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dir(obj)          <span class="comment"># 简单的列出对象obj所包含的方法名称，返回一个字符串列表</span></span><br><span class="line">help(obj.func)    <span class="comment"># 查询obj.func的具体介绍和用法</span></span><br></pre></td></tr></table></figure>
-<h5 id="2-测试类型的方法-（推荐3）"><a href="#2-测试类型的方法-（推荐3）" class="headerlink" title="2.测试类型的方法 （推荐3）"></a>2.测试类型的方法 （推荐3）</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> type(L) == type([]):</span><br><span class="line">    print(<span class="string">"L is list"</span>）</span><br><span class="line"><span class="keyword">if</span> type(L) == list:</span><br><span class="line">    print(<span class="string">"L is list"</span>）</span><br><span class="line"><span class="keyword">if</span> isinstance(L, list):</span><br><span class="line">    print(<span class="string">"L is list"</span>）</span><br></pre></td></tr></table></figure>
-<h5 id="3-Python数据类型：哈希-不可哈希"><a href="#3-Python数据类型：哈希-不可哈希" class="headerlink" title="3.Python数据类型：哈希/不可哈希"></a>3.Python数据类型：哈希/不可哈希</h5><p>哈希类型。不可变类型，可利用hash函数查看其hash值，也可以作为字典的key。具体有：</p>
+        <h4 id="一、类型与运算"><a href="#一、类型与运算" class="headerlink" title="一、类型与运算"></a>一、类型与运算</h4><h5 id="寻求帮助"><a href="#寻求帮助" class="headerlink" title="寻求帮助"></a>寻求帮助</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dir(obj)          <span class="comment"># 简单的列出对象obj所包含的方法名称，返回一个字符串列表</span></span><br><span class="line">help(obj.func)    <span class="comment"># 查询obj.func的具体介绍和用法</span></span><br></pre></td></tr></table></figure>
+<h5 id="测试类型的方法-（推荐3）"><a href="#测试类型的方法-（推荐3）" class="headerlink" title="测试类型的方法 （推荐3）"></a>测试类型的方法 （推荐3）</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> type(L) == type([]):</span><br><span class="line">    print(<span class="string">"L is list"</span>）</span><br><span class="line"><span class="keyword">if</span> type(L) == list:</span><br><span class="line">    print(<span class="string">"L is list"</span>）</span><br><span class="line"><span class="keyword">if</span> isinstance(L, list):</span><br><span class="line">    print(<span class="string">"L is list"</span>）</span><br></pre></td></tr></table></figure>
+<h5 id="Python数据类型：哈希-不可哈希"><a href="#Python数据类型：哈希-不可哈希" class="headerlink" title="Python数据类型：哈希/不可哈希"></a>Python数据类型：哈希/不可哈希</h5><p>哈希类型。不可变类型，可利用hash函数查看其hash值，也可以作为字典的key。具体有：</p>
 <blockquote>
 <p>数字类型：int, float, decimal.Decimal, fraction.Fraction, complex</p>
 <p>字符串类型：str, bytes</p>
