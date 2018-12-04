@@ -91,3 +91,13 @@
     a("[data-gist-id]").gist()
   })
 })(jQuery);
+
+<% if (!index && theme.toc){ %>
+<script>
+  var tocEx = function(el){
+    var toc = document.querySelector(el), content = toc.innerHTML;
+    content = content.replace('<!-- ttoc -->', '<div class="toc">').replace('<!-- ttocstop -->', '</div>');
+    toc.innerHTML = content;
+  }('.article-entry');
+</script>
+<% } %>

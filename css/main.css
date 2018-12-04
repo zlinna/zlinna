@@ -1254,3 +1254,12 @@ h3.aside-title {
 .copyright p a {
   color: #000;
 }
+
+.toc {
+  float: left;
+  margin-left: 40px;
+  padding: 10px 20px;
+  background: #f1f1f1;
+  border-radius: 10px;
+  box-shadow: 0 0 3px #bbb;
+}
