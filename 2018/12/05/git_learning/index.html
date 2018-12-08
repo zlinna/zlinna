@@ -51,7 +51,7 @@
 </tr>
 <tr>
 <td></td>
-<td>git add -p <file></file></td>
+<td>git add -p ‘file’</td>
 <td style="text-align:right">Add some changes in <file> to the next commit</file></td>
 </tr>
 <tr>
@@ -76,12 +76,12 @@
 </tr>
 <tr>
 <td></td>
-<td>git log -p <file></file></td>
+<td>git log -p ‘file’</td>
 <td style="text-align:right">Show changes over time for a specific file</td>
 </tr>
 <tr>
 <td></td>
-<td>git blame <file></file></td>
+<td>git blame ‘file’</td>
 <td style="text-align:right">Who changed what and when in <file></file></td>
 </tr>
 <tr>
@@ -91,27 +91,27 @@
 </tr>
 <tr>
 <td></td>
-<td>git checkout <branch></branch></td>
+<td>git checkout ‘branch’</td>
 <td style="text-align:right">Switch HEAD branch</td>
 </tr>
 <tr>
 <td></td>
-<td>git branch <new-branch></new-branch></td>
+<td>git branch ‘new-branch’</td>
 <td style="text-align:right">Create a new branch based on your current HEAD</td>
 </tr>
 <tr>
 <td></td>
-<td>git checkout –track &lt;remote/bran-ch&gt;</td>
+<td>git checkout –track ‘remote/bran-ch’</td>
 <td style="text-align:right">Create a new tracking branch based on a remote branch</td>
 </tr>
 <tr>
 <td></td>
-<td>git branch -d <branch></branch></td>
+<td>git branch -d ‘branch’</td>
 <td style="text-align:right">Delete a local branch</td>
 </tr>
 <tr>
 <td></td>
-<td>git tag <tag-name></tag-name></td>
+<td>git tag ‘tag-name’</td>
 <td style="text-align:right">Mark the current commit with a tag</td>
 </tr>
 <tr>
@@ -121,32 +121,32 @@
 </tr>
 <tr>
 <td></td>
-<td>git remote show <remote></remote></td>
+<td>git remote show ‘remote’</td>
 <td style="text-align:right">Show information about a remote</td>
 </tr>
 <tr>
 <td></td>
-<td>git remote add <shortname> <url></url></shortname></td>
+<td>git remote add ‘shortname’ ‘url’</td>
 <td style="text-align:right">Add new remote repository, named <remote></remote></td>
 </tr>
 <tr>
 <td></td>
-<td>git fetch <remote></remote></td>
+<td>git fetch &lt;remote’</td>
 <td style="text-align:right">Download all changes from <remote>, but don‘t integrate into HEAD</remote></td>
 </tr>
 <tr>
 <td></td>
-<td>git pull <remote> <branch></branch></remote></td>
+<td>git pull ‘remote’ ‘branch’</td>
 <td style="text-align:right">Download changes and directly <br>merge/integrate into HEAD</td>
 </tr>
 <tr>
 <td></td>
-<td>git push <remote> <branch></branch></remote></td>
+<td>git push ‘remote’ ‘branch’</td>
 <td style="text-align:right">Publish local changes on a remote</td>
 </tr>
 <tr>
 <td></td>
-<td>git branch -dr &lt;remote/branch&gt;</td>
+<td>git branch -dr ‘remote/branch’</td>
 <td style="text-align:right">Delete a branch on the remote</td>
 </tr>
 <tr>
@@ -156,12 +156,12 @@
 </tr>
 <tr>
 <td>MERGE &amp; REBASE</td>
-<td>git merge <branch></branch></td>
+<td>git merge ‘branch’</td>
 <td style="text-align:right">Merge <branch> into your current HEAD</branch></td>
 </tr>
 <tr>
 <td></td>
-<td>git rebase <branch></branch></td>
+<td>git rebase ‘branch’</td>
 <td style="text-align:right">Rebase your current HEAD onto <branch>  Don‘t rebase published commits!</branch></td>
 </tr>
 <tr>
@@ -181,7 +181,7 @@
 </tr>
 <tr>
 <td></td>
-<td>git add <resolved-file>   git rm <resolved-file></resolved-file></resolved-file></td>
+<td>git add ‘resolved-file’   git rm ‘resolved-file’</td>
 <td style="text-align:right">Use your editor to manually solve conflicts and (after resolving) mark file as resolved</td>
 </tr>
 <tr>
@@ -191,27 +191,27 @@
 </tr>
 <tr>
 <td></td>
-<td>git checkout HEAD <file></file></td>
+<td>git checkout HEAD ‘file’</td>
 <td style="text-align:right">Discard local changes in a specific file</td>
 </tr>
 <tr>
 <td></td>
-<td>git revert <commit></commit></td>
+<td>git revert ‘commit’</td>
 <td style="text-align:right">Revert a commit (by producing a new commit with contrary changes)</td>
 </tr>
 <tr>
 <td></td>
-<td>git reset –hard <commit></commit></td>
+<td>git reset –hard ‘commit’</td>
 <td style="text-align:right">Reset your HEAD pointer to a previous commit …and discard all   changes  since then</td>
 </tr>
 <tr>
 <td></td>
-<td>git reset <commit></commit></td>
+<td>git reset ‘commit’</td>
 <td style="text-align:right">…and preserve all changes as unstaged changes</td>
 </tr>
 <tr>
 <td></td>
-<td>git reset –keep <commit></commit></td>
+<td>git reset –keep ‘commit’</td>
 <td style="text-align:right">…and preserve uncommitted local changes</td>
 </tr>
 </tbody>
