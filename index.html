@@ -1,4 +1,80 @@
-<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.8.0"><meta charset="utf-8"><title>休息中...</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.png"><link href="/css/bootstrap.min.css" rel="stylesheet"><link href="/css/font-awesome.min.css" rel="stylesheet"><link href="/css/main.css" rel="stylesheet"></head><body><div class="wrap"><nav class="page-navigation"><div class="nav-container"><div class="page-header-logo"><h1 class="prince-log"><a href="/" class="home-link">zlin</a></h1></div><button type="button" data-toggle="collapse" data-target=".main-nav-items" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><ul class="collapse navbar-collapse main-nav-items"><li class="menu-item"><a href="/" target="_self">HOME</a></li><li class="menu-item"><a href="/archives/" target="_self">ARCHIVE</a></li><li class="menu-item"><a href="/gallery/" target="_self">GALLERY</a></li><li class="menu-item"><a href="/about/" target="_self">ABOUT</a></li></ul></div></nav><main class="prince-container"><div class="articles"><article class="post-block"><h2 class="post-title"><a href="/2018/12/09/zxl01/" class="post-link">To You</a></h2><div class="post-info">Dec 9th 2018</div><div class="post-entry"><p>20181209，两年零一天。</p>
+<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.8.0"><meta charset="utf-8"><title>休息中...</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.png"><link href="/css/bootstrap.min.css" rel="stylesheet"><link href="/css/font-awesome.min.css" rel="stylesheet"><link href="/css/main.css" rel="stylesheet"></head><body><div class="wrap"><nav class="page-navigation"><div class="nav-container"><div class="page-header-logo"><h1 class="prince-log"><a href="/" class="home-link">zlin</a></h1></div><button type="button" data-toggle="collapse" data-target=".main-nav-items" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><ul class="collapse navbar-collapse main-nav-items"><li class="menu-item"><a href="/" target="_self">HOME</a></li><li class="menu-item"><a href="/archives/" target="_self">ARCHIVE</a></li><li class="menu-item"><a href="/gallery/" target="_self">GALLERY</a></li><li class="menu-item"><a href="/about/" target="_self">ABOUT</a></li></ul></div></nav><main class="prince-container"><div class="articles"><article class="post-block"><h2 class="post-title"><a href="/2019/05/01/复杂度分析/" class="post-link">(no title)</a></h2><div class="post-info">May 1st 2019</div><div class="post-entry"><h2><span id="复杂度分析">复杂度分析</span></h2><p>如何分析、统计算法的执行效率(执行时间)和资源消耗(占用空间)？<br></p>
+<p>数据结构和算法 解决的问题是”如何让计算机更快时间、更省空间”， 所以需要从执行时间、占用空间两个维度评估算法性能。<strong>复杂度 </strong>是时间复杂度和空间复杂度的统称，描述的是算法执行时间(占用空间)与数据规模的增长关系。</p>
+<blockquote>
+<p>复杂度分析。一个不用具体的测试数据来测试，就可以粗略地估计算法的执行效率的方法</p>
+</blockquote>
+<p>和 <strong>性能测试</strong> 相比。复杂度分析不依赖执行环境、成本低、效率高、指导性强</p>
+<blockquote>
+<p>性能的基准测试。事后统计法：跑代码，通过统计、监控，得到算法执行的时间和占用的内存大小。得到的实验结果，受环境、数据规模大小因素影响较大</p>
+</blockquote>
+<h3><span id="大o表示法">大O表示法</span></h3><p>算法的执行时间与每行代码的执行次数成正比，用T(n) = O(f(n)) 表示。（其中T(n) 表示算法执行总时间，f(n) 表示每行代码执行总次数，而n往往表示的是数据规模）</p>
+<p>分析法则：只关注循环执行次数最多的一段代码，若嵌套则相乘，若不同且规模不一则相加。</p>
+<p>常用的复杂度级别：</p>
+<ol>
+<li>多项式阶：随着数据规模的增长，算法的执行时间和空间占用，按照多项式的比例增长。包含有常数阶[O(1)]、对数阶[O(logn)]、线性阶[O(n)]、线性对数阶[O(nlogn)]、平方阶[O(n^2^)]、立方阶[O(n^3^)]、……</li>
+<li>非多项式阶：随着数据规模的增长，算法的执行时间和空间占用暴增，性能极差。包含有指数阶[O(2^n^)]、阶乘阶[O(n!)]</li>
+</ol>
+<h3><span id="最好-最坏情况时间复杂度">最好、最坏情况时间复杂度</span></h3><p>最好情况时间复杂度(best case time complexity)，在最理想的情况下，执行代码的时间复杂度。</p>
+<p>最坏情况时间复杂度(worst case time complexity)，在最糟糕的情况下，执行代码的时间复杂度。</p>
+<h3><span id="平均情况时间复杂度">平均情况时间复杂度</span></h3><p>平均情况时间复杂度(average case time complexity)，即概率论中的加权平均值，也称期望值。所以平局时间复杂度= 加权平均时间复杂度= 期望平均时间复杂度</p>
+<h3><span id="均摊时间复杂度">均摊时间复杂度</span></h3><p>均摊时间复杂度(amortised case time complexity)，摊还分析法。</p>
+<p>例子：对一个数据结构进行一组连续操作中，大部分情况下时间复杂度都很低，只有个别情况下时间复杂度比较高，而且这些操作之间存在前后连贯的时许关系。这个时候，我们就可以将这一组操作放在一块儿分析，看是否能将较高时间复杂度那次操作的耗时，平潭到其它那些时间复杂度较低的操作上。</p>
+<p>一般，在能够应用均摊时间复杂度分析的场合，摊还时间复杂度就等于最好情况时间复杂度。</p>
+</div><div class="post-meta"><a href="/2019/05/01/复杂度分析/" class="article-more">Continue Reading</a></div></article><article class="post-block"><h2 class="post-title"><a href="/2018/12/22/sequence/" class="post-link">Algorithm basic</a></h2><div class="post-info">Dec 22nd 2018</div><div class="post-entry"><h1 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h1><table>
+<thead>
+<tr>
+<th style="text-align:left">排序算法</th>
+<th style="text-align:left">平均时间复杂度</th>
+<th style="text-align:left">最差时间复杂度</th>
+<th style="text-align:left">空间复杂度</th>
+<th style="text-align:left">数据对象稳定性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">冒泡排序</td>
+<td style="text-align:left">O(n^2^)</td>
+<td style="text-align:left">O(n^2^)</td>
+<td style="text-align:left">O(1)</td>
+<td style="text-align:left">稳定</td>
+</tr>
+<tr>
+<td style="text-align:left">插入排序</td>
+<td style="text-align:left">O(n^2^)</td>
+<td style="text-align:left">O(n^2^)</td>
+<td style="text-align:left">O(1)</td>
+<td style="text-align:left">稳定</td>
+</tr>
+<tr>
+<td style="text-align:left">选择排序</td>
+<td style="text-align:left">O(n^2^)</td>
+<td style="text-align:left">O(n^2^)</td>
+<td style="text-align:left">O(1)</td>
+<td style="text-align:left">数组不稳定、链表稳定</td>
+</tr>
+<tr>
+<td style="text-align:left">快速排序</td>
+<td style="text-align:left">O(n*log~2~n)</td>
+<td style="text-align:left">O(n^2^)</td>
+<td style="text-align:left">O(log~2~n)</td>
+<td style="text-align:left">不稳定</td>
+</tr>
+<tr>
+<td style="text-align:left">希尔排序</td>
+<td style="text-align:left">O(n*log~2~n)</td>
+<td style="text-align:left">O(n^2^)</td>
+<td style="text-align:left">O(1)</td>
+<td style="text-align:left">不稳定</td>
+</tr>
+<tr>
+<td style="text-align:left">归并排序</td>
+<td style="text-align:left">O(n*log~2~n)</td>
+<td style="text-align:left">O(n*log~2~n)</td>
+<td style="text-align:left">O(n)</td>
+<td style="text-align:left">稳定</td>
+</tr>
+</tbody>
+</table></div><div class="post-meta"><a href="/2018/12/22/sequence/" class="article-more">Continue Reading</a><div class="post-tags-box"><a class="tag-link" href="/tags/C/">C</a>, <a class="tag-link" href="/tags/Python/">Python</a></div></div></article><article class="post-block"><h2 class="post-title"><a href="/2018/12/09/zxl01/" class="post-link">To You</a></h2><div class="post-info">Dec 9th 2018</div><div class="post-entry"><p>20181209，两年零一天。</p>
 <p><em>我喜欢你！</em> 和我在一起</p>
 </div><div class="post-meta"><a href="/2018/12/09/zxl01/" class="article-more">Continue Reading</a><div class="post-tags-box"><a class="tag-link" href="/tags/zlinna/">zlinna</a></div></div></article><article class="post-block"><h2 class="post-title"><a href="/2018/12/05/git_learning/" class="post-link">Git basic</a></h2><div class="post-info">Dec 5th 2018</div><div class="post-entry"><h4 id="git安装及配置"><a href="#git安装及配置" class="headerlink" title="git安装及配置"></a>git安装及配置</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Linux/Debian安装git方式</span><br><span class="line">    命令行：sudo apt-get install git</span><br><span class="line">    源码：下载后，依次  &apos;&apos;./config&apos;  &apos;make&apos;  &apos;sudo make install&apos;</span><br><span class="line">配置:</span><br><span class="line">    git config --global user.name &quot;username&quot;</span><br><span class="line">    git config --global user.email &quot;username@example.com&quot;</span><br><span class="line">    git config --global color.ui true  # 让Git显示颜色</span><br></pre></td></tr></table></figure>
 <h4 id="工作区与暂存区"><a href="#工作区与暂存区" class="headerlink" title="工作区与暂存区"></a>工作区与暂存区</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">本地仓库: git init初始化的文件夹</span><br><span class="line">  &gt; 工作区: 当前文件夹(除隐藏目录外)</span><br><span class="line">  &gt; 版本库: .git目录</span><br><span class="line">     &gt; 暂存区: stage或index文件夹</span><br><span class="line">     &gt; 分支: .git目录下master、develop、...</span><br><span class="line">     &gt; ...</span><br></pre></td></tr></table></figure>
