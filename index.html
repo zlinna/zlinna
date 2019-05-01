@@ -1,26 +1,12 @@
-<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.8.0"><meta charset="utf-8"><title>休息中...</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.png"><link href="/css/bootstrap.min.css" rel="stylesheet"><link href="/css/font-awesome.min.css" rel="stylesheet"><link href="/css/main.css" rel="stylesheet"></head><body><div class="wrap"><nav class="page-navigation"><div class="nav-container"><div class="page-header-logo"><h1 class="prince-log"><a href="/" class="home-link">zlin</a></h1></div><button type="button" data-toggle="collapse" data-target=".main-nav-items" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><ul class="collapse navbar-collapse main-nav-items"><li class="menu-item"><a href="/" target="_self">HOME</a></li><li class="menu-item"><a href="/archives/" target="_self">ARCHIVE</a></li><li class="menu-item"><a href="/gallery/" target="_self">GALLERY</a></li><li class="menu-item"><a href="/about/" target="_self">ABOUT</a></li></ul></div></nav><main class="prince-container"><div class="articles"><article class="post-block"><h2 class="post-title"><a href="/2019/05/01/复杂度分析/" class="post-link">复杂度分析</a></h2><div class="post-info">May 1st 2019</div><div class="post-entry"><h2><span id="复杂度分析">复杂度分析</span></h2><p>如何分析、统计算法的执行效率(执行时间)和资源消耗(占用空间)？<br></p>
-<p>数据结构和算法 解决的问题是”如何让计算机更快时间、更省空间”， 所以需要从执行时间、占用空间两个维度评估算法性能。<strong>复杂度 </strong>是时间复杂度和空间复杂度的统称，描述的是算法执行时间(占用空间)与数据规模的增长关系。</p>
+<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.8.0"><meta charset="utf-8"><title>休息中...</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.png"><link href="/css/bootstrap.min.css" rel="stylesheet"><link href="/css/font-awesome.min.css" rel="stylesheet"><link href="/css/main.css" rel="stylesheet"></head><body><div class="wrap"><nav class="page-navigation"><div class="nav-container"><div class="page-header-logo"><h1 class="prince-log"><a href="/" class="home-link">zlin</a></h1></div><button type="button" data-toggle="collapse" data-target=".main-nav-items" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><ul class="collapse navbar-collapse main-nav-items"><li class="menu-item"><a href="/" target="_self">HOME</a></li><li class="menu-item"><a href="/archives/" target="_self">ARCHIVE</a></li><li class="menu-item"><a href="/gallery/" target="_self">GALLERY</a></li><li class="menu-item"><a href="/about/" target="_self">ABOUT</a></li></ul></div></nav><main class="prince-container"><div class="articles"><article class="post-block"><h2 class="post-title"><a href="/2019/05/01/复杂度分析/" class="post-link">复杂度分析</a></h2><div class="post-info">May 1st 2019</div><div class="post-entry"><h2 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><p>如何分析、统计算法的执行效率(执行时间)和资源消耗(占用空间)？<br></p>
+<p>数据结构和算法 解决的问题是”如何让计算机更快时间、更省空间”， 所以需要从执行时间、占用空间两个维度评估算法性能。[^<strong>复杂度分析 </strong>]:一个不用具体的测试数据来测试，就可以粗略地估计算法的执行效率的方法<strong>复杂度分析</strong> 是时间复杂度和空间复杂度的统称，描述的是算法执行时间(占用空间)与数据规模的增长关系。</p>
 <blockquote>
 <p>复杂度分析。一个不用具体的测试数据来测试，就可以粗略地估计算法的执行效率的方法</p>
 </blockquote>
 <p>和 <strong>性能测试</strong> 相比。复杂度分析不依赖执行环境、成本低、效率高、指导性强</p>
 <blockquote>
 <p>性能的基准测试。事后统计法：跑代码，通过统计、监控，得到算法执行的时间和占用的内存大小。得到的实验结果，受环境、数据规模大小因素影响较大</p>
-</blockquote>
-<h3><span id="大o表示法">大O表示法</span></h3><p>算法的执行时间与每行代码的执行次数成正比，用T(n) = O(f(n)) 表示。（其中T(n) 表示算法执行总时间，f(n) 表示每行代码执行总次数，而n往往表示的是数据规模）</p>
-<p>分析法则：只关注循环执行次数最多的一段代码，若嵌套则相乘，若不同且规模不一则相加。</p>
-<p>常用的复杂度级别：</p>
-<ol>
-<li>多项式阶：随着数据规模的增长，算法的执行时间和空间占用，按照多项式的比例增长。包含有常数阶[O(1)]、对数阶[O(logn)]、线性阶[O(n)]、线性对数阶[O(nlogn)]、平方阶[O(n^2^)]、立方阶[O(n^3^)]、……</li>
-<li>非多项式阶：随着数据规模的增长，算法的执行时间和空间占用暴增，性能极差。包含有指数阶[O(2^n^)]、阶乘阶[O(n!)]</li>
-</ol>
-<h3><span id="最好-最坏情况时间复杂度">最好、最坏情况时间复杂度</span></h3><p>最好情况时间复杂度(best case time complexity)，在最理想的情况下，执行代码的时间复杂度。</p>
-<p>最坏情况时间复杂度(worst case time complexity)，在最糟糕的情况下，执行代码的时间复杂度。</p>
-<h3><span id="平均情况时间复杂度">平均情况时间复杂度</span></h3><p>平均情况时间复杂度(average case time complexity)，即概率论中的加权平均值，也称期望值。所以平局时间复杂度= 加权平均时间复杂度= 期望平均时间复杂度</p>
-<h3><span id="均摊时间复杂度">均摊时间复杂度</span></h3><p>均摊时间复杂度(amortised case time complexity)，摊还分析法。</p>
-<p>例子：对一个数据结构进行一组连续操作中，大部分情况下时间复杂度都很低，只有个别情况下时间复杂度比较高，而且这些操作之间存在前后连贯的时许关系。这个时候，我们就可以将这一组操作放在一块儿分析，看是否能将较高时间复杂度那次操作的耗时，平潭到其它那些时间复杂度较低的操作上。</p>
-<p>一般，在能够应用均摊时间复杂度分析的场合，摊还时间复杂度就等于最好情况时间复杂度。</p>
-</div><div class="post-meta"><a href="/2019/05/01/复杂度分析/" class="article-more">Continue Reading</a><div class="post-tags-box"><a class="tag-link" href="/tags/数据结构/">数据结构</a>, <a class="tag-link" href="/tags/算法/">算法</a></div></div></article><article class="post-block"><h2 class="post-title"><a href="/2018/12/22/sequence/" class="post-link">Algorithm basic</a></h2><div class="post-info">Dec 22nd 2018</div><div class="post-entry"><h1 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h1><table>
+</blockquote></div><div class="post-meta"><a href="/2019/05/01/复杂度分析/" class="article-more">Continue Reading</a><div class="post-tags-box"><a class="tag-link" href="/tags/数据结构/">数据结构</a>, <a class="tag-link" href="/tags/算法/">算法</a></div></div></article><article class="post-block"><h2 class="post-title"><a href="/2018/12/22/sequence/" class="post-link">Algorithm basic</a></h2><div class="post-info">Dec 22nd 2018</div><div class="post-entry"><h1 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h1><table>
 <thead>
 <tr>
 <th style="text-align:left">排序算法</th>
