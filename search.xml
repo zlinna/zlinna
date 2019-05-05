@@ -3,6 +3,34 @@
   
     
     <entry>
+      <title>To You</title>
+      <link href="/2019/05/05/A%20boy/"/>
+      <url>/2019/05/05/A%20boy/</url>
+      
+        <content type="html"><![CDATA[<p>如果你再不改变，接下来就是<strong>“死路”</strong>一条。知道吗 ？</p><p>内在的改变不了，那就先改外表吧。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> zlinna </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title></title>
+      <link href="/2019/05/02/%E6%95%B0%E7%BB%84_%E9%93%BE%E8%A1%A8/"/>
+      <url>/2019/05/02/%E6%95%B0%E7%BB%84_%E9%93%BE%E8%A1%A8/</url>
+      
+        <content type="html"><![CDATA[<p>数组(Array)是一种线性表数据结构。它用一组连续的内存空间，来存储一组具有相同类型的数据。</p><p>线性表：数组、链表、队列、栈…</p><p>非线性表：二叉树、图、堆…</p><p>数组和链表的区别：链表适合插入、删除，时间复杂度为O(1)；数组支持随机访问，根据下标随机访问的时间复杂度为O(1)。</p><blockquote><p>数组是适合查找，但查找的时间复杂度不是O(1)。即便是排序好的数组，用二分查找，时间复杂度也是O(logn)</p></blockquote><p>LRU缓存淘汰算法。</p><p>缓存是一种提高数据读取性能的技术，比如CPU缓存、数据库缓存、浏览器缓存等。缓存的大小有限，当缓存被用满时，哪些数据应该被清理出去，哪些数据应该被保留？这就需要缓存淘汰算法来决定。常见的策略有三种：先进先出FIFO(First In First Out)、最少使用策略LFU(Least Frequently Used)、最近最少使用策略LRU(Least Recently Used)。</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    <entry>
       <title>复杂度分析</title>
       <link href="/2019/05/01/%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%90/"/>
       <url>/2019/05/01/%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%90/</url>
