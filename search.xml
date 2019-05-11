@@ -3,6 +3,23 @@
   
     
     <entry>
+      <title>设计模式</title>
+      <link href="/2019/05/11/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+      <url>/2019/05/11/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</url>
+      
+        <content type="html"><![CDATA[<p>学习设计模式总结<br><img src="/设计模式学习.jpg" alt="设计模式"></p><p>更详细的见<a href="https://design-patterns.readthedocs.io/zh_CN/latest/index.html" target="_blank" rel="noopener">设计模式</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 设计 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>软件可测试性</title>
       <link href="/2019/05/11/%E8%BD%AF%E4%BB%B6%E5%8F%AF%E6%B5%8B%E6%80%A7/"/>
       <url>/2019/05/11/%E8%BD%AF%E4%BB%B6%E5%8F%AF%E6%B5%8B%E6%80%A7/</url>
