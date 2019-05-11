@@ -1090,6 +1090,12 @@ h3.aside-title {
   background-repeat: no-repeat;
 }
 
+.image_define {
+  background-image: url('/可测试性.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
 .about-me-text {
   font-family: "Trebuchet MS", monospace, 'Microsoft YaHei', STHeiti;
   padding: 15px 0 0;
