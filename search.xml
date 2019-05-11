@@ -49,9 +49,9 @@
       
         <tags>
             
-            <tag> Python </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> Python </tag>
             
         </tags>
       
@@ -121,9 +121,9 @@
       
         <tags>
             
-            <tag> Python </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> Python </tag>
             
             <tag> C </tag>
             
@@ -149,7 +149,7 @@
     </entry>
     
     <entry>
-      <title>Git basic</title>
+      <title>git 基础学习</title>
       <link href="/2018/12/05/git_learning/"/>
       <url>/2018/12/05/git_learning/</url>
       
@@ -166,7 +166,7 @@
     </entry>
     
     <entry>
-      <title>Python Basic</title>
+      <title>Python 基础学习</title>
       <link href="/2018/12/04/python_basic/"/>
       <url>/2018/12/04/python_basic/</url>
       
