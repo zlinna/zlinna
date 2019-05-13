@@ -3,6 +3,25 @@
   
     
     <entry>
+      <title>C++ 指针</title>
+      <link href="/2019/05/13/%E6%8C%87%E9%92%88_C++/"/>
+      <url>/2019/05/13/%E6%8C%87%E9%92%88_C++/</url>
+      
+        <content type="html"><![CDATA[<h2><span id="指针">指针</span></h2><p>指针是一个变量，其存储的是值的地址，而不是值本身。 值的地址，只需对变量应用地址运算符(&amp;)，即可得到其地址；例如home是一个变量，则&amp;home是它的地址。 (<em>)运算符被称为间接值(indirect value)或解除引用(dereferencing)运算符，将其应用于指针，可以得到该地址存储的值。例如L: mainly是一个指针，则mainly是一个地址，</em>mainly表示存储在该地址处的值。</p><h4><span id="1声明指针">1.声明指针</span></h4><p>要声明指向特定类型的指针，请使用下面的格式：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">typeName * pointerName;  <span class="comment">// 示例： double * pn;</span></span><br><span class="line">``` </span><br><span class="line">指针声明的格式。传统上C程序员使用该格式：</span><br><span class="line">```C</span><br><span class="line"><span class="keyword">int</span> *ptr;  <span class="comment">// 强调 *ptr 是一个int类型的指针</span></span><br></pre></td></tr></table></figure></p><p>而C++大多数使用下述格式：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>* ptr;  <span class="comment">// 强调 int* 是一种类型 -- 指向int的指针</span></span><br></pre></td></tr></table></figure></p><p>其实，对于编译器来说空格所处位置没有区别，甚至可以不加空格，直接： int<em>ptr； 但是要知道的是，声明多个指针时，对每个指针变量名，都需要使用一个</em> 。</p><h4><span id="2给指针赋值">2.给指针赋值</span></h4><p>应将内存地址赋给指针。可以对变量名应用&amp;运算符，来获得被命名的内存地址，new运算符返回未命名的内存地址。示例：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> higgens = <span class="number">5</span>;</span><br><span class="line"><span class="keyword">int</span> * pt = &amp;higgens;  <span class="comment">// 将higgens地址赋给pt</span></span><br><span class="line"></span><br><span class="line">pc = <span class="keyword">new</span> <span class="keyword">char</span>;</span><br><span class="line">pa = <span class="keyword">new</span> <span class="keyword">double</span>[<span class="number">30</span>];</span><br></pre></td></tr></table></figure></p><h4><span id="3对指针解除引用">3.对指针解除引用</span></h4><p>对指针解除引用意味着获得指针指向的值。一种是对指针应用解除引用或间接值运算符(<em>)来解除引用。另一种是使用数组表示法，例如，pn[0]与(</em>p)是一样的。</p><h4><span id="4指针-数组和指针算术">4.指针、数组和指针算术</span></h4><p>指针与数组基本等价的原因在于指针算数(pointer arithmetic)和C++内部处理数组的方式。先看看算数，将整数变量加1后，其值增加1；但将指针变量加1后，增加的量等于它指向的<strong>类型的字节数</strong>。 通常，使用数组表示法时，C++都执行下面的转换：arrayname[i] ==&gt; <em>(arrayname + i); 如果使用的是指针，而不是数组名，C++也执行同样的转换：pointername[i] ==&gt;</em>(pointername + i);</p><h4><span id="5指针与const">5.指针与const</span></h4><p>将const关键字用于指针，有两种方式：</p><ol><li>将指针指向一个常量对象，这样可以防止使用该指针来修改所指向的值；</li><li>将指针本身声明为常量，这样可以防止改变指向指针指向的位置。<br>首先，声明一个指向常量的指针pt：<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> age = <span class="number">25</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> * pt = &amp;age;</span><br></pre></td></tr></table></figure></li></ol><p>该声明支持，pt指向一个const int(这里为21)，因此不能使用pt来修改这个值，换句话说，*pt的值为const，不能被修改。但pt的声明并不意味着它指向的值实际上就是一个常量，而只是<strong>意味着对pt而言，这个值是常量</strong>。 例如，pt指向age，而age不是const。可以通过age变量修改age的值，但不能使用pt指针来修改它。</p><ul><li>将常规变量的地址赋给常规指针</li><li>将常规变量的地址赋给指向const的指针</li><li>将const变量的地址赋给指向const的指针</li><li>将const变量的地址赋给常规指针  (❌)</li></ul><p>尽可能使用const。 将指针参数声明为指向常量数据的指针有两条理由：</p><ol><li>可以避免由于无意间修改数据导致的编程错误</li><li>如果使用const使得函数能够处理const和非const实参，否则将只能接受非const数据<br>如果条件允许，应将指针行参声明为指向const的指针。</li></ol><h4><span id="函数指针">函数指针</span></h4><p>与数据项类似，函数也有地址。函数的地址是存储其机器语言代码的内存的开始地址。<br>声明指向某种数据类型的指针时，必须指定指针指向的类型。同样，声明指向函数的指针时，也必须指定指针指向的函数类型。这意味着声明应指定函数的特征标(参数列表)，也就是说，声明应像函数原型那样指出有关函数的信息。例如原型如下：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">pam</span><span class="params">(<span class="keyword">int</span>)</span></span>;  <span class="comment">// prototype</span></span><br><span class="line"><span class="comment">// 指针类型如下</span></span><br><span class="line"><span class="keyword">double</span> (*pf)(<span class="keyword">int</span>);  <span class="comment">// *pf = pam</span></span><br></pre></td></tr></table></figure></p><p>由于pam是函数，因此(<em>pf)也是函数，pf就是<strong>函数指针</strong>。<br>通常，要声明指向特定类型的函数的指针时，可以首先编写这种函数的原型，然后用(</em>pf)替换函数名。这样pf就是这类函数的指针。<br>由于括号的优先级比<em>运算符高，因此在声明中使用括号将</em>pf括起。 <em>pf(int)意味着pf()是一个返回指针的函数，而(</em>pf)(int)意味着pf是一个指向函数的指针。</p><p>使用typedef简化函数指针<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 关键字typedef可以创建类型别名：</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">double</span> real;    <span class="comment">// 给double创建个别名real</span></span><br><span class="line">                        <span class="comment">// 将别名当作标识符进行声明，并在开头使用关键子typedef</span></span><br><span class="line"><span class="comment">// 因此，可将p_func声明为函数指针类型的别名：</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">const</span> <span class="keyword">double</span>* (*p_func)(<span class="keyword">const</span> <span class="keyword">double</span> *, <span class="keyword">int</span>);  <span class="comment">// p_func(函数指针) 一个类型别名 </span></span><br><span class="line">p_func p1 = f1;</span><br><span class="line"></span><br><span class="line">p_func pa[<span class="number">3</span>] = &#123;f1, f2, f3&#125;;</span><br></pre></td></tr></table></figure></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> C++ </tag>
+            
+            <tag> 指针 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>设计模式</title>
       <link href="/2019/05/11/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
       <url>/2019/05/11/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</url>
@@ -49,9 +68,9 @@
       
         <tags>
             
-            <tag> 算法 </tag>
-            
             <tag> Python </tag>
+            
+            <tag> 算法 </tag>
             
         </tags>
       
@@ -121,11 +140,11 @@
       
         <tags>
             
-            <tag> 算法 </tag>
-            
             <tag> Python </tag>
             
-            <tag> C </tag>
+            <tag> 算法 </tag>
+            
+            <tag> C++ </tag>
             
         </tags>
       
