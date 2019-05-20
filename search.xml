@@ -3,6 +3,23 @@
   
     
     <entry>
+      <title>数据库关键字(常用)</title>
+      <link href="/2019/05/20/Mysql%20%E6%95%B0%E6%8D%AE%E5%BA%93%E5%85%B3%E9%94%AE%E5%AD%97(%E5%B8%B8%E7%94%A8)/"/>
+      <url>/2019/05/20/Mysql%20%E6%95%B0%E6%8D%AE%E5%BA%93%E5%85%B3%E9%94%AE%E5%AD%97(%E5%B8%B8%E7%94%A8)/</url>
+      
+        <content type="html"><![CDATA[<table><thead><tr><th>关键字</th><th>描述</th><th>示例</th></tr></thead><tbody><tr><td>drop</td><td>注销</td><td>drop table cacaca;</td></tr><tr><td>create</td><td>创建</td><td>create table cacaca( id int(11), desc varchar(255),   content text, isOK tinyint(1));</td></tr><tr><td>delete</td><td>删除</td><td>delete from cacaca where id = 1;</td></tr><tr><td>insert</td><td>插入</td><td>insert into cacaca values(1, ‘desc oo’, ‘content oo’);<br> insert into cacaca (desc)values(‘memeda’);</td></tr><tr><td>update</td><td>更新</td><td>update cacaca set desc = “desc oooo” where id = 1;</td></tr><tr><td>select</td><td>查找</td><td>select * from cacaca;</td></tr><tr><td>alter</td><td>更改</td><td>alter table cacaca change desc desc text;   [ 更改列数据类型 ]<br> alter table cacaca change desc desc_t varchar(255);   [ 更改列名称 ]</td></tr><tr><td>null</td><td>空</td><td>select * from cacaca where desc is [not] null;   [ 判断null使用 is[not] ]</td></tr><tr><td>distinct</td><td>去重</td><td>select distinct desc from cacaca;</td></tr><tr><td>between</td><td>在…之间</td><td>select * from cacaca where id [not] between 1 and 2; <br> [ 列名id的值(不)在[1, 2]之间 ]</td></tr><tr><td>like</td><td>模糊匹配</td><td>select * from cacaca where desc like ‘<em>sec%’;<br> [ 其中 \</em> 匹配 一个字符，% 匹配 一个或多个 ]</td></tr><tr><td>limit</td><td>截断</td><td>select * from cacaca order by id desc limit 1,2;  <br>[ limit 前一个参数默认为0，即第一条数据，后一个参数为选择多少项。<br>该句的意思是：通过id降序查询cacaca数据表中的第2项以及第3项 ]</td></tr><tr><td>order by</td><td>排序</td><td>select * from cacaca order by id [__asc\</td><td>desc__]; <br> [  默认asc升序，可选desc降序系列 ]</td></tr><tr><td>group by</td><td>分组</td><td>select isOK,count(*) from cacaca <strong>group by</strong> isOK;（分组查询isOK总数量）</td></tr></tbody></table>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Mysql </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>C++ 指针</title>
       <link href="/2019/05/13/%E6%8C%87%E9%92%88_C++/"/>
       <url>/2019/05/13/%E6%8C%87%E9%92%88_C++/</url>
