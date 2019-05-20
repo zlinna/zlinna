@@ -60,7 +60,7 @@
 <tr>
 <td>like</td>
 <td>模糊匹配</td>
-<td>select * from cacaca where desc like ‘<em>sec%’;<br> [ 其中 \</em> 匹配 一个字符，% 匹配 一个或多个 ]</td>
+<td>select * from cacaca where desc like ‘_sec%’;<br> [ 其中 _ 匹配 一个字符，% 匹配 一个或多个 ]</td>
 </tr>
 <tr>
 <td>limit</td>
@@ -70,13 +70,13 @@
 <tr>
 <td>order by</td>
 <td>排序</td>
-<td>select * from cacaca order by id [__asc\</td>
-<td>desc__]; <br> [  默认asc升序，可选desc降序系列 ]</td>
+<td>select * from cacaca order by id [asc\</td>
+<td>desc]; <br> [  默认asc升序，可选desc降序系列 ]</td>
 </tr>
 <tr>
 <td>group by</td>
 <td>分组</td>
-<td>select isOK,count(*) from cacaca <strong>group by</strong> isOK;（分组查询isOK总数量）</td>
+<td>select isOK,count(*) from cacaca group by isOK;（分组查询isOK总数量）</td>
 </tr>
 </tbody>
 </table>
