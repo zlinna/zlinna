@@ -3,6 +3,23 @@
   
     
     <entry>
+      <title>Plan A</title>
+      <link href="/2019/06/23/Plan_2019/"/>
+      <url>/2019/06/23/Plan_2019/</url>
+      
+        <content type="html"><![CDATA[<p>You must know that there is no much time for you. </p><table><thead><tr><th>计划</th><th>标的</th><th>日期</th></tr></thead><tbody><tr><td>1. linux 界面自动化工具</td><td>查找/试用</td><td>20190627</td></tr><tr><td>2. go语言 学习</td><td>get.基础知识</td><td>20190630</td></tr><tr><td>3. C/C++内存检测工具</td><td>查找/试用</td><td>20190703</td></tr><tr><td>4. 非功能性测试工具</td><td>增加功能</td><td>20190715</td></tr><tr><td>5. go web编程(书)</td><td>看完/敲完</td><td>20191031</td></tr></tbody></table>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> zlinna </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>数据库关键字(常用)</title>
       <link href="/2019/05/20/Mysql%20%E6%95%B0%E6%8D%AE%E5%BA%93%E5%85%B3%E9%94%AE%E5%AD%97(%E5%B8%B8%E7%94%A8)/"/>
       <url>/2019/05/20/Mysql%20%E6%95%B0%E6%8D%AE%E5%BA%93%E5%85%B3%E9%94%AE%E5%AD%97(%E5%B8%B8%E7%94%A8)/</url>
@@ -66,9 +83,9 @@
       
         <tags>
             
-            <tag> 测试 </tag>
-            
             <tag> 设计 </tag>
+            
+            <tag> 测试 </tag>
             
         </tags>
       
