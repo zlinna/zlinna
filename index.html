@@ -2,34 +2,7 @@
 <h2 id="How-测试方式"><a href="#How-测试方式" class="headerlink" title="How 测试方式"></a>How 测试方式</h2><h3 id="测试实现"><a href="#测试实现" class="headerlink" title="测试实现"></a>测试实现</h3><p>举个例子。针对字符串分割函数（如下），实现单元测试。<br><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> goTest</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"strings"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Split slices s into all substrings separated by sep and</span></span><br><span class="line"><span class="comment">// returns a slice of the substrings between those separators.</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Split</span><span class="params">(s, sep <span class="keyword">string</span>)</span> []<span class="title">string</span></span> &#123;</span><br><span class="line">	<span class="keyword">var</span> result []<span class="keyword">string</span></span><br><span class="line">	i := strings.Index(s, sep)</span><br><span class="line">	<span class="keyword">for</span> i &gt; <span class="number">-1</span> &#123;</span><br><span class="line">		result = <span class="built_in">append</span>(result, s[:i])</span><br><span class="line">		s = s[i+<span class="built_in">len</span>(sep):]</span><br><span class="line">		i = strings.Index(s, sep)</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">append</span>(result, s)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>在当前目录下且一样的包名 goTest ，写一个简单的 go 测试函数，如下：<br><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> goTest</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	<span class="string">"reflect"</span></span><br><span class="line">	<span class="string">"testing"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">TestSplit</span><span class="params">(t *testing.T)</span></span> &#123;</span><br><span class="line">	got := Split(<span class="string">"a/b/c"</span>, <span class="string">"/"</span>)</span><br><span class="line">	want := []<span class="keyword">string</span>&#123;<span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"c"</span>&#125;</span><br><span class="line">	<span class="keyword">if</span> !reflect.DeepEqual(want, got) &#123;</span><br><span class="line">		t.Fatalf(<span class="string">"expected: %v, got: %v"</span>, want, got)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>测试函数必须以 Test 开头， 且必须携带一个 *testing.T 参数。 t *testing.T 提供改测试函数的打印、跳过、失败功能。</p>
-<h3 id="测试执行"><a href="#测试执行" class="headerlink" title="测试执行"></a>测试执行</h3></div><div class="post-meta"><a href="/2019/07/28/Go Testing/" class="article-more">Continue Reading</a><div class="post-tags-box"><a class="tag-link" href="/tags/Go/">Go</a>, <a class="tag-link" href="/tags/测试/">测试</a></div></div></article><article class="post-block"><h2 class="post-title"><a href="/2019/06/23/Plan_2019/" class="post-link">Plan A</a></h2><div class="post-info">Jun 23rd 2019</div><div class="post-entry"><p>You must know that there is no much time for you. </p>
-<table>
-<thead>
-<tr>
-<th>计划</th>
-<th>标的</th>
-<th>日期</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1. go语言 学习</td>
-<td>get.基础知识</td>
-<td>20190630</td>
-</tr>
-<tr>
-<td>2. 非功能性测试工具</td>
-<td>增加功能</td>
-<td>20190715</td>
-</tr>
-<tr>
-<td>3. go web编程(书)</td>
-<td>看完/敲完</td>
-<td>20191031</td>
-</tr>
-</tbody>
-</table>
-</div><div class="post-meta"><a href="/2019/06/23/Plan_2019/" class="article-more">Continue Reading</a><div class="post-tags-box"><a class="tag-link" href="/tags/zlinna/">zlinna</a></div></div></article><article class="post-block"><h2 class="post-title"><a href="/2019/05/20/Mysql 数据库关键字(常用)/" class="post-link">数据库关键字(常用)</a></h2><div class="post-info">May 20th 2019</div><div class="post-entry"><table>
+<h3 id="测试执行"><a href="#测试执行" class="headerlink" title="测试执行"></a>测试执行</h3></div><div class="post-meta"><a href="/2019/07/28/Go Testing/" class="article-more">Continue Reading</a><div class="post-tags-box"><a class="tag-link" href="/tags/Go/">Go</a>, <a class="tag-link" href="/tags/测试/">测试</a></div></div></article><article class="post-block"><h2 class="post-title"><a href="/2019/05/20/Mysql 数据库关键字(常用)/" class="post-link">数据库关键字(常用)</a></h2><div class="post-info">May 20th 2019</div><div class="post-entry"><table>
 <thead>
 <tr>
 <th>关键字</th>
@@ -114,8 +87,14 @@
 <h4 id="1-声明指针"><a href="#1-声明指针" class="headerlink" title="1.声明指针"></a>1.声明指针</h4><p>要声明指向特定类型的指针，请使用下面的格式：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">typeName * pointerName;  <span class="comment">// 示例： double * pn;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 指针声明的格式。传统上C程序员使用该格式：</span></span><br><span class="line"><span class="keyword">int</span> *ptr;  <span class="comment">// 强调 *ptr 是一个int类型的指针</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 而C++大多数使用下述格式：</span></span><br><span class="line"><span class="keyword">int</span>* ptr;  <span class="comment">// 强调 int* 是一种类型 -- 指向int的指针</span></span><br></pre></td></tr></table></figure></p>
 <p>其实，对于编译器来说空格所处位置没有区别，甚至可以不加空格，直接： int*ptr； 但是要知道的是，声明多个指针时，对每个指针变量名，都需要使用一个* 。</p></div><div class="post-meta"><a href="/2019/05/13/指针_C++/" class="article-more">Continue Reading</a><div class="post-tags-box"><a class="tag-link" href="/tags/C/">C++</a></div></div></article><article class="post-block"><h2 class="post-title"><a href="/2019/05/11/设计模式/" class="post-link">设计模式</a></h2><div class="post-info">May 11th 2019</div><div class="post-entry"><p>学习设计模式总结<br><img src="/设计模式学习.jpg" alt="设计模式"></p>
 <p>更详细的见<a href="https://design-patterns.readthedocs.io/zh_CN/latest/index.html" target="_blank" rel="noopener">图说设计模式</a></p>
-</div><div class="post-meta"><a href="/2019/05/11/设计模式/" class="article-more">Continue Reading</a><div class="post-tags-box"><a class="tag-link" href="/tags/设计模式/">设计模式</a></div></div></article><article class="post-block"><h2 class="post-title"><a href="/2019/05/11/软件可测性/" class="post-link">软件可测试性</a></h2><div class="post-info">May 11th 2019</div><div class="post-entry"><p>分析软件的可测试性，旨在加快测试进度、提高测试效率等。<br>软件的可测试性是指被测对象具有某些特征，如：可控制、可分解、稳定、易理解、可观察等。<br>可测性设计时需要保证的是 1. 不对软件本身的功能产生影响；2. 不产生附加的测试。</p>
-<p><img src="/可测试性.jpg" alt="可测试性"></p></div><div class="post-meta"><a href="/2019/05/11/软件可测性/" class="article-more">Continue Reading</a><div class="post-tags-box"><a class="tag-link" href="/tags/测试/">测试</a></div></div></article><article class="post-block"><h2 class="post-title"><a href="/2019/05/08/查找算法/" class="post-link">查找算法</a></h2><div class="post-info">May 8th 2019</div><div class="post-entry"><table>
+</div><div class="post-meta"><a href="/2019/05/11/设计模式/" class="article-more">Continue Reading</a><div class="post-tags-box"><a class="tag-link" href="/tags/设计模式/">设计模式</a></div></div></article><article class="post-block"><h2 class="post-title"><a href="/2019/05/11/软件可测性/" class="post-link">软件可测试性</a></h2><div class="post-info">May 11th 2019</div><div class="post-entry"><p>分析软件的可测试性，旨在加快测试进度、提高测试效率等。</p>
+<p>软件的可测试性是指被测对象具有某些特征，如：<strong>可控制、可分解、稳定、易理解、可观察</strong>等。</p>
+<p>可测性设计时需要保证的是：</p>
+<ol>
+<li>不对软件本身的功能产生影响；</li>
+<li>不产生附加的测试。</li>
+</ol>
+<p><img src="/可测试性.jpg" alt="可测试性"></p></div><div class="post-meta"><a href="/2019/05/11/软件可测性/" class="article-more">Continue Reading</a><div class="post-tags-box"><a class="tag-link" href="/tags/测试/">测试</a></div></div></article><article class="post-block"><h2 class="post-title"><a href="/2019/05/08/查找算法之二分查找/" class="post-link">查找算法之二分查找</a></h2><div class="post-info">May 8th 2019</div><div class="post-entry"><table>
 <thead>
 <tr>
 <th>查找算法</th>
@@ -156,13 +135,63 @@
 <td>无序或有序</td>
 </tr>
 </tbody>
-</table></div><div class="post-meta"><a href="/2019/05/08/查找算法/" class="article-more">Continue Reading</a><div class="post-tags-box"><a class="tag-link" href="/tags/Python/">Python</a>, <a class="tag-link" href="/tags/algorithm/">algorithm</a></div></div></article><article class="post-block"><h2 class="post-title"><a href="/2019/05/05/A boy/" class="post-link">To You</a></h2><div class="post-info">May 5th 2019</div><div class="post-entry"><p>如果你再不改变，接下来就是<strong>“死路”</strong>一条。知道吗 ？</p>
-<p>内在的改变不了，那就先改外表吧。</p>
-</div><div class="post-meta"><a href="/2019/05/05/A boy/" class="article-more">Continue Reading</a><div class="post-tags-box"><a class="tag-link" href="/tags/zlinna/">zlinna</a></div></div></article><article class="post-block"><h2 class="post-title"><a href="/2019/05/02/数组_链表/" class="post-link">数组</a></h2><div class="post-info">May 2nd 2019</div><div class="post-entry"><p>数组(Array)是一种线性表数据结构。它用一组连续的内存空间，来存储一组具有相同类型的数据。</p>
-<p>线性表：数组、链表、队列、栈…</p>
-<p>非线性表：二叉树、图、堆…</p>
-<p>数组和链表的区别：链表适合插入、删除，时间复杂度为O(1)；数组支持随机访问，根据下标随机访问的时间复杂度为O(1)。<code>数组是适合查找，但查找的时间复杂度不是O(1)。即便是排序好的数组，用二分查找，时间复杂度也是O(logn)</code></p>
-<p>LRU缓存淘汰算法。</p>
-<p>缓存是一种提高数据读取性能的技术，比如CPU缓存、数据库缓存、浏览器缓存等。缓存的大小有限，当缓存被用满时，哪些数据应该被清理出去，哪些数据应该被保留？这就需要缓存淘汰算法来决定。常见的策略有三种：先进先出FIFO(First In First Out)、最少使用策略LFU(Least Frequently Used)、最近最少使用策略LRU(Least Recently Used)。</p>
-</div><div class="post-meta"><a href="/2019/05/02/数组_链表/" class="article-more">Continue Reading</a><div class="post-tags-box"><a class="tag-link" href="/tags/数据结构/">数据结构</a></div></div></article><article class="post-block"><h2 class="post-title"><a href="/2019/05/01/复杂度分析/" class="post-link">复杂度分析</a></h2><div class="post-info">May 1st 2019</div><div class="post-entry"><p>如何分析、统计算法的执行效率(执行时间)和资源消耗(占用空间)？<br></p>
-<p>数据结构和算法 解决的问题是”如何让计算机更快时间、更省空间”， 所以需要从执行时间、占用空间两个维度评估算法性能。复杂度分析 是时间复杂度和空间复杂度的统称，描述的是算法执行时间(占用空间)与数据规模的增长关系。和 性能测试 相比。复杂度分析不依赖执行环境、成本低、效率高、指导性强<br>        <strong>[复杂度分析]</strong> 一个不用具体的测试数据来测试，就可以粗略地估计算法的执行效率的方法<br>        <strong>[性能的基准测试]</strong> 事后统计法：跑代码，通过统计、监控，得到算法执行的时间和占用的内存大小。得到的实验结果，受环境、数据规模大小因素影响较大<br></p></div><div class="post-meta"><a href="/2019/05/01/复杂度分析/" class="article-more">Continue Reading</a><div class="post-tags-box"><a class="tag-link" href="/tags/algorithm/">algorithm</a></div></div></article></div><div class="paginator"><div class="next-wrap col-md-6 col-xs-6 col-md-offset-6 col-xs-offset-6"><a href="/page/2/" class="next-page">Next</a><i class="fa fa-angle-double-right"></i></div></div></main></div><footer><div class="copyright"><p>Crafted with <i class="fa fa-heart"></i> by&nbsp;zlin&nbsp;|&nbsp;<a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yiliashaw/hexo-theme-prince" target="_blank">Prince</a> by SHAW</p></div></footer><script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.js"></script><script src="/js/script.js"></script></body></html>
+</table></div><div class="post-meta"><a href="/2019/05/08/查找算法之二分查找/" class="article-more">Continue Reading</a><div class="post-tags-box"><a class="tag-link" href="/tags/Python/">Python</a>, <a class="tag-link" href="/tags/algorithm/">algorithm</a></div></div></article><article class="post-block"><h2 class="post-title"><a href="/2019/05/01/复杂度分析/" class="post-link">复杂度分析</a></h2><div class="post-info">May 1st 2019</div><div class="post-entry"><p>如何分析、统计算法的执行效率(执行时间)和资源消耗(占用空间)？<br></p>
+<p>数据结构和算法 解决的问题是”如何让计算机更快时间、更省空间”， 所以需要从执行时间、占用空间两个维度评估算法性能。复杂度分析 是时间复杂度和空间复杂度的统称，描述的是算法执行时间(占用空间)与数据规模的增长关系。和 性能测试 相比。复杂度分析不依赖执行环境、成本低、效率高、指导性强<br>        <strong>[复杂度分析]</strong> 一个不用具体的测试数据来测试，就可以粗略地估计算法的执行效率的方法<br>        <strong>[性能的基准测试]</strong> 事后统计法：跑代码，通过统计、监控，得到算法执行的时间和占用的内存大小。得到的实验结果，受环境、数据规模大小因素影响较大<br></p></div><div class="post-meta"><a href="/2019/05/01/复杂度分析/" class="article-more">Continue Reading</a><div class="post-tags-box"><a class="tag-link" href="/tags/algorithm/">algorithm</a></div></div></article><article class="post-block"><h2 class="post-title"><a href="/2018/12/22/排序算法/" class="post-link">排序算法</a></h2><div class="post-info">Dec 22nd 2018</div><div class="post-entry"><h1 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h1><table>
+<thead>
+<tr>
+<th style="text-align:left">排序算法</th>
+<th style="text-align:left">平均时间复杂度</th>
+<th style="text-align:left">最差时间复杂度</th>
+<th style="text-align:left">空间复杂度</th>
+<th style="text-align:left">数据对象稳定性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">冒泡排序</td>
+<td style="text-align:left">O(n^2^)</td>
+<td style="text-align:left">O(n^2^)</td>
+<td style="text-align:left">O(1)</td>
+<td style="text-align:left">稳定</td>
+</tr>
+<tr>
+<td style="text-align:left">插入排序</td>
+<td style="text-align:left">O(n^2^)</td>
+<td style="text-align:left">O(n^2^)</td>
+<td style="text-align:left">O(1)</td>
+<td style="text-align:left">稳定</td>
+</tr>
+<tr>
+<td style="text-align:left">选择排序</td>
+<td style="text-align:left">O(n^2^)</td>
+<td style="text-align:left">O(n^2^)</td>
+<td style="text-align:left">O(1)</td>
+<td style="text-align:left">数组不稳定、链表稳定</td>
+</tr>
+<tr>
+<td style="text-align:left">快速排序</td>
+<td style="text-align:left">O(n*log~2~n)</td>
+<td style="text-align:left">O(n^2^)</td>
+<td style="text-align:left">O(log~2~n)</td>
+<td style="text-align:left">不稳定</td>
+</tr>
+<tr>
+<td style="text-align:left">希尔排序</td>
+<td style="text-align:left">O(n*log~2~n)</td>
+<td style="text-align:left">O(n^2^)</td>
+<td style="text-align:left">O(1)</td>
+<td style="text-align:left">不稳定</td>
+</tr>
+<tr>
+<td style="text-align:left">归并排序</td>
+<td style="text-align:left">O(n*log~2~n)</td>
+<td style="text-align:left">O(n*log~2~n)</td>
+<td style="text-align:left">O(n)</td>
+<td style="text-align:left">稳定</td>
+</tr>
+</tbody>
+</table></div><div class="post-meta"><a href="/2018/12/22/排序算法/" class="article-more">Continue Reading</a><div class="post-tags-box"><a class="tag-link" href="/tags/Python/">Python</a>, <a class="tag-link" href="/tags/algorithm/">algorithm</a></div></div></article><article class="post-block"><h2 class="post-title"><a href="/2018/12/09/zxl01/" class="post-link">To You</a></h2><div class="post-info">Dec 9th 2018</div><div class="post-entry"><p>20181209，两年零一天。<br>我喜欢你！</p>
+<p>【4190】如果你再不改变，接下来就是<strong>“死路”</strong>一条。知道吗？</p>
+</div><div class="post-meta"><a href="/2018/12/09/zxl01/" class="article-more">Continue Reading</a><div class="post-tags-box"><a class="tag-link" href="/tags/zlinna/">zlinna</a></div></div></article><article class="post-block"><h2 class="post-title"><a href="/2018/12/05/git_learning/" class="post-link">git 基础学习</a></h2><div class="post-info">Dec 5th 2018</div><div class="post-entry"><h4 id="git安装及配置"><a href="#git安装及配置" class="headerlink" title="git安装及配置"></a>git安装及配置</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Linux/Debian安装git方式</span><br><span class="line">    命令行：sudo apt-get install git</span><br><span class="line">    源码：下载后，依次  &apos;&apos;./config&apos;  &apos;make&apos;  &apos;sudo make install&apos;</span><br><span class="line">配置:</span><br><span class="line">    git config --global user.name &quot;username&quot;</span><br><span class="line">    git config --global user.email &quot;username@example.com&quot;</span><br><span class="line">    git config --global color.ui true  # 让Git显示颜色</span><br></pre></td></tr></table></figure>
+<h4 id="工作区与暂存区"><a href="#工作区与暂存区" class="headerlink" title="工作区与暂存区"></a>工作区与暂存区</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">本地仓库: git init初始化的文件夹</span><br><span class="line">  &gt; 工作区: 当前文件夹(除隐藏目录外)</span><br><span class="line">  &gt; 版本库: .git目录</span><br><span class="line">     &gt; 暂存区: stage或index文件夹</span><br><span class="line">     &gt; 分支: .git目录下master、develop、...</span><br><span class="line">     &gt; ...</span><br></pre></td></tr></table></figure>
+<h4 id="本地git命令使用"><a href="#本地git命令使用" class="headerlink" title="本地git命令使用"></a>本地git命令使用</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">初始化一个仓库: git init</span><br><span class="line">添加文件至暂存区: git add &lt;file&gt;  (git add file.txt)</span><br><span class="line">提交文件至仓库: git commit -m &lt;message&gt;  (git commit -m &quot;test for commit&quot;)</span><br><span class="line">查看当前工作区状态： git status</span><br><span class="line">查看修改内容: git diff</span><br><span class="line"></span><br><span class="line">查看提交历史(一行显示): git log （git log --pretty==oneline）</span><br><span class="line">查看命令历史: git reflog</span><br><span class="line">回退版本: git reset --hard &lt;commit_id&gt;</span><br><span class="line">丢弃工作区的修改: git checkout -- &lt;file&gt;</span><br><span class="line">删除暂存区中文件: git rm &lt;file&gt;</span><br><span class="line">查看远程库信息: git remote -v</span><br></pre></td></tr></table></figure></div><div class="post-meta"><a href="/2018/12/05/git_learning/" class="article-more">Continue Reading</a><div class="post-tags-box"><a class="tag-link" href="/tags/Git/">Git</a></div></div></article></div><div class="paginator"><div class="next-wrap col-md-6 col-xs-6 col-md-offset-6 col-xs-offset-6"><a href="/page/2/" class="next-page">Next</a><i class="fa fa-angle-double-right"></i></div></div></main></div><footer><div class="copyright"><p>Crafted with <i class="fa fa-heart"></i> by&nbsp;zlin&nbsp;|&nbsp;<a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yiliashaw/hexo-theme-prince" target="_blank">Prince</a> by SHAW</p></div></footer><script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.js"></script><script src="/js/script.js"></script></body></html>
