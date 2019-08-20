@@ -3,6 +3,27 @@
   
     
     <entry>
+      <title>测试角度学习 cache2go</title>
+      <link href="/2019/08/20/%E6%B5%8B%E8%AF%95%E8%A7%92%E5%BA%A6%E5%AD%A6%E4%B9%A0cache2go/"/>
+      <url>/2019/08/20/%E6%B5%8B%E8%AF%95%E8%A7%92%E5%BA%A6%E5%AD%A6%E4%B9%A0cache2go/</url>
+      
+        <content type="html"><![CDATA[<h1><span id="cache2go-介绍">cache2go 介绍</span></h1><p>“Concurrency-safe golang caching library with expiration capabilities.”。作者如是介绍该项目，翻译后的意思为：存在心跳机制且并发安全的go语言缓存库。</p><h2><span id="测试角度学习-cache2go">测试角度学习 cache2go</span></h2><p>我们知道心跳机制、并发安全是 cache2go 的两大特点，那么肯定是测试的重点了。</p><p>首先查看 cache_test.go ，可以获得以下信息：【 Cachetable 简称 table ， cacheitem 简称 item 】<br>| 测试点 | 描述 | 具体因子 |<br>| - | - | - |<br>| TestCache | 创建 table ，添加 item ，获取 item 基本信息功能验证 | Cache、table.Add、table.value、item.AccessCount、item.LifeSpan、item.AccessedOn、item.CreateOn |<br>|  |  |  |<br>| TestCacheExpire | 心跳机制功能验证 | Cache、table.Add、table.value |<br>| TestExists | table 表中是否存在 item 项功能验证 | Cache、table.Add、table.Exists |<br>| TestNotFoundAdd | table 表中是否存在 item 项，若不存在则添加 功能验证 | Cache、table.NotFoundAdd |<br>| TestNotFoundAddConcurrency |||<br>| TestCacheKeepAlive |||<br>| TestDelete |||<br>| TestFlush |||<br>| TestCount |||<br>| TestDataLoader |||<br>| TestAccessCount |||<br>| TestCallbacks |||<br>| TestCallbackQueue |||<br>| TestLogger |||</p><h2><span id="tips">tips</span></h2><p>测试行为，而非实施。 “The public API of a package declare this is what(行为) I do, not this is <del>how(实施)</del> I do it.”</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Go </tag>
+            
+            <tag> 测试 </tag>
+            
+            <tag> cache2go </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>Go Testing;How,What,Why</title>
       <link href="/2019/07/28/Go%20Testing/"/>
       <url>/2019/07/28/Go%20Testing/</url>
@@ -100,9 +121,9 @@
       
         <tags>
             
-            <tag> Python </tag>
-            
             <tag> algorithm </tag>
+            
+            <tag> Python </tag>
             
         </tags>
       
@@ -136,9 +157,9 @@
       
         <tags>
             
-            <tag> Python </tag>
-            
             <tag> algorithm </tag>
+            
+            <tag> Python </tag>
             
         </tags>
       
