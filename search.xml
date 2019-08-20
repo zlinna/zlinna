@@ -7,7 +7,7 @@
       <link href="/2019/08/20/%E6%B5%8B%E8%AF%95%E8%A7%92%E5%BA%A6%E5%AD%A6%E4%B9%A0cache2go/"/>
       <url>/2019/08/20/%E6%B5%8B%E8%AF%95%E8%A7%92%E5%BA%A6%E5%AD%A6%E4%B9%A0cache2go/</url>
       
-        <content type="html"><![CDATA[<h1><span id="cache2go-介绍">cache2go 介绍</span></h1><p>“Concurrency-safe golang caching library with expiration capabilities.”。作者如是介绍该项目，翻译后的意思为：存在心跳机制且并发安全的go语言缓存库。</p><h2><span id="测试角度学习-cache2go">测试角度学习 cache2go</span></h2><p>我们知道心跳机制、并发安全是 cache2go 的两大特点，那么肯定是测试的重点了。</p><p>首先查看 cache_test.go ，可以获得以下信息：【 Cachetable 简称 table ， cacheitem 简称 item 】<br>| 测试点 | 描述 | 具体因子 |<br>| - | - | - |<br>| TestCache | 创建 table ，添加 item ，获取 item 基本信息功能验证 | Cache、table.Add、table.value、item.AccessCount、item.LifeSpan、item.AccessedOn、item.CreateOn |<br>|  |  |  |<br>| TestCacheExpire | 心跳机制功能验证 | Cache、table.Add、table.value |<br>| TestExists | table 表中是否存在 item 项功能验证 | Cache、table.Add、table.Exists |<br>| TestNotFoundAdd | table 表中是否存在 item 项，若不存在则添加 功能验证 | Cache、table.NotFoundAdd |<br>| TestNotFoundAddConcurrency |||<br>| TestCacheKeepAlive |||<br>| TestDelete |||<br>| TestFlush |||<br>| TestCount |||<br>| TestDataLoader |||<br>| TestAccessCount |||<br>| TestCallbacks |||<br>| TestCallbackQueue |||<br>| TestLogger |||</p><h2><span id="tips">tips</span></h2><p>测试行为，而非实施。 “The public API of a package declare this is what(行为) I do, not this is <del>how(实施)</del> I do it.”</p>]]></content>
+        <content type="html"><![CDATA[<h1><span id="cache2go-介绍">cache2go 介绍</span></h1><p>“Concurrency-safe golang caching library with expiration capabilities.”。作者如是介绍该项目，翻译后的意思为：存在心跳机制且并发安全的go语言缓存库。</p><h2><span id="测试角度学习-cache2go">测试角度学习 cache2go</span></h2><p>我们知道心跳机制、并发安全是 cache2go 的两大特点，那么肯定是测试的重点了。</p><p>首先查看 cache_test.go ，可以获得以下信息：【Cachetable 简称 table，cacheitem 简称 item】<br>| 测试点 | 具体因子 | 描述 |<br>| - | - | - |<br>| TestCache | Cache, table.Add, table.Value, item.AccessCount, item.LifeSpan, item.AccessedOn、item.CreateOn | 创建 table ，添加 item ，获取 item 基本信息 |<br>| TestCacheExpire | Cache, table.Add, table.Value | 心跳机制：超出 lifeSpan 存活时间后自动消除 item |<br>| TestExists | Cache, table.Add, <strong>table.Exists</strong> | table 表中是否存在 item |<br>| TestNotFoundAdd | Cache, table.Add, <strong>table.NotFoundAdd</strong> | table 表中是否存在 item ，若不存在则添加 |<br>| TestNotFoundAddConcurrency | Cache, <strong>table.NotFoundAdd</strong>, <strong>table.Foreach</strong> | 并发安全： NotFoundAdd |<br>| TestCacheKeepAlive | Cache, table.Add, <strong>item.KeepAlive</strong>, table.Exists | 心跳机制： item 重新计时 |<br>| TestDelete | Cache, table.Add, table.Value, <strong>table.Delete</strong> | 从 table 表中删除 item |<br>| TestFlush | Cache, table.Add, <strong>table.Flush</strong>, table.Value | 清空 table 表所有 item |<br>| TestCount | Cache, table.Add, table.Value, <strong>table.Count</strong> | table 表中 item 数量 |<br>| TestDataLoader | Cache, <strong>table.SetDataLoader</strong>, NewCacheItem, table.Value, table.Exists, item.Data | 访问不存在的 item 时会触发 loadData 回调函数 |<br>| TestAccessCount | Cache, table.Add, table.Value, <strong>table.MostAccessed</strong> | 返回访问频率高的 count 条 item |<br>| TestCallbacks | Cache, <strong>table.SetAddItemCallback</strong>, <strong>table.SetAboutToDeleteItemCallback</strong>, <strong>item.SetAboutToExpireCallback</strong>, table.Add | 增加、删除或超时移除情况下触发回调 |<br>| TestCallbackQueue | Cache, item.Key, table.Add, <strong>table.AddAddedItemCallback</strong>, <strong>table.AddAboutToDeleteItemCallback</strong>, <strong>item.AddAboutToExpireCallback</strong>, <strong>table.RemoveAddedItemCallbacks</strong>, <strong>table.RemoveAboutToDeleteItemCallback</strong>, <strong>item.SetAboutToExpireCallback</strong>, <strong>item.RemoveAboutToExpireCallback</strong> | 设置、增加、清除回调函数正常 |<br>| TestLogger | Cache, <strong>table.SetLogger</strong>, table.Add | 设置 logger 正常 |</p><table><thead><tr><th>基准测试</th><th>具体因子</th><th>描述</th></tr></thead><tbody><tr><td>BenchmarkNotFoundAdd</td><td>Cache, <strong>table.NotFoundAdd</strong></td><td>基准测试： NotFoundAdd</td></tr></tbody></table><h2><span id="tips">tips</span></h2><p>测试行为，而非实施。 “The public API of a package declare this is what(行为) I do, not this is <del>how(实施)</del> I do it.”</p>]]></content>
       
       
       
@@ -121,9 +121,9 @@
       
         <tags>
             
-            <tag> algorithm </tag>
-            
             <tag> Python </tag>
+            
+            <tag> algorithm </tag>
             
         </tags>
       
@@ -157,9 +157,9 @@
       
         <tags>
             
-            <tag> algorithm </tag>
-            
             <tag> Python </tag>
+            
+            <tag> algorithm </tag>
             
         </tags>
       
