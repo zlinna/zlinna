@@ -1,6 +1,87 @@
 <!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.8.0"><meta charset="utf-8"><title>I'm here.</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.png"><link href="/css/bootstrap.min.css" rel="stylesheet"><link href="/css/font-awesome.min.css" rel="stylesheet"><link href="/css/main.css" rel="stylesheet"></head><body><div class="wrap"><nav class="page-navigation"><div class="nav-container"><div class="page-header-logo"><h1 class="prince-log"><a href="/" class="home-link">zlin</a></h1></div><button type="button" data-toggle="collapse" data-target=".main-nav-items" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><ul class="collapse navbar-collapse main-nav-items"><li class="menu-item"><a href="/" target="_self">HOME</a></li><li class="menu-item"><a href="/archives/" target="_self">ARCHIVE</a></li><li class="menu-item"><a href="/gallery/" target="_self">GALLERY</a></li><li class="menu-item"><a href="/about/" target="_self">ABOUT</a></li></ul></div></nav><main class="prince-container"><div class="articles"><article class="post-block"><h2 class="post-title"><a href="/2019/08/20/测试角度学习cache2go/" class="post-link">测试角度学习 cache2go</a></h2><div class="post-info">Aug 20th 2019</div><div class="post-entry"><h1><span id="cache2go-介绍">cache2go 介绍</span></h1><p>“Concurrency-safe golang caching library with expiration capabilities.”。作者如是介绍该项目，翻译后的意思为：存在心跳机制且并发安全的go语言缓存库。</p>
 <h2><span id="测试角度学习-cache2go">测试角度学习 cache2go</span></h2><p>我们知道心跳机制、并发安全是 cache2go 的两大特点，那么肯定是测试的重点了。</p>
-<p>首先查看 cache_test.go ，可以获得以下信息：【Cachetable 简称 table，cacheitem 简称 item】<br>| 测试点 | 具体因子 | 描述 |<br>| - | - | - |<br>| TestCache | Cache, table.Add, table.Value, item.AccessCount, item.LifeSpan, item.AccessedOn、item.CreateOn | 创建 table ，添加 item ，获取 item 基本信息 |<br>| TestCacheExpire | Cache, table.Add, table.Value | 心跳机制：超出 lifeSpan 存活时间后自动消除 item |<br>| TestExists | Cache, table.Add, <strong>table.Exists</strong> | table 表中是否存在 item |<br>| TestNotFoundAdd | Cache, table.Add, <strong>table.NotFoundAdd</strong> | table 表中是否存在 item ，若不存在则添加 |<br>| TestNotFoundAddConcurrency | Cache, <strong>table.NotFoundAdd</strong>, <strong>table.Foreach</strong> | 并发安全： NotFoundAdd |<br>| TestCacheKeepAlive | Cache, table.Add, <strong>item.KeepAlive</strong>, table.Exists | 心跳机制： item 重新计时 |<br>| TestDelete | Cache, table.Add, table.Value, <strong>table.Delete</strong> | 从 table 表中删除 item |<br>| TestFlush | Cache, table.Add, <strong>table.Flush</strong>, table.Value | 清空 table 表所有 item |<br>| TestCount | Cache, table.Add, table.Value, <strong>table.Count</strong> | table 表中 item 数量 |<br>| TestDataLoader | Cache, <strong>table.SetDataLoader</strong>, NewCacheItem, table.Value, table.Exists, item.Data | 访问不存在的 item 时会触发 loadData 回调函数 |<br>| TestAccessCount | Cache, table.Add, table.Value, <strong>table.MostAccessed</strong> | 返回访问频率高的 count 条 item |<br>| TestCallbacks | Cache, <strong>table.SetAddItemCallback</strong>, <strong>table.SetAboutToDeleteItemCallback</strong>, <strong>item.SetAboutToExpireCallback</strong>, table.Add | 增加、删除或超时移除情况下触发回调 |<br>| TestCallbackQueue | Cache, item.Key, table.Add, <strong>table.AddAddedItemCallback</strong>, <strong>table.AddAboutToDeleteItemCallback</strong>, <strong>item.AddAboutToExpireCallback</strong>, <strong>table.RemoveAddedItemCallbacks</strong>, <strong>table.RemoveAboutToDeleteItemCallback</strong>, <strong>item.SetAboutToExpireCallback</strong>, <strong>item.RemoveAboutToExpireCallback</strong> | 设置、增加、清除回调函数正常 |<br>| TestLogger | Cache, <strong>table.SetLogger</strong>, table.Add | 设置 logger 正常 |</p>
+<p>首先查看 cache_test.go ，可以获得以下信息：【Cachetable 简称 table，cacheitem 简称 item】</p>
+<table>
+<thead>
+<tr>
+<th>测试点</th>
+<th>具体因子</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TestCache</td>
+<td>Cache, table.Add, table.Value, item.AccessCount, item.LifeSpan, item.AccessedOn、item.CreateOn</td>
+<td>创建 table ，添加 item ，获取 item 基本信息</td>
+</tr>
+<tr>
+<td>TestCacheExpire</td>
+<td>Cache, table.Add, table.Value</td>
+<td>心跳机制：超出 lifeSpan 存活时间后自动消除 item</td>
+</tr>
+<tr>
+<td>TestExists</td>
+<td>Cache, table.Add, <strong>table.Exists</strong></td>
+<td>table 表中是否存在 item</td>
+</tr>
+<tr>
+<td>TestNotFoundAdd</td>
+<td>Cache, table.Add, <strong>table.NotFoundAdd</strong></td>
+<td>table 表中是否存在 item ，若不存在则添加</td>
+</tr>
+<tr>
+<td>TestNotFoundAddConcurrency</td>
+<td>Cache, <strong>table.NotFoundAdd</strong>, <strong>table.Foreach</strong></td>
+<td>并发安全： NotFoundAdd</td>
+</tr>
+<tr>
+<td>TestCacheKeepAlive</td>
+<td>Cache, table.Add, <strong>item.KeepAlive</strong>, table.Exists</td>
+<td>心跳机制： item 重新计时</td>
+</tr>
+<tr>
+<td>TestDelete</td>
+<td>Cache, table.Add, table.Value, <strong>table.Delete</strong></td>
+<td>从 table 表中删除 item</td>
+</tr>
+<tr>
+<td>TestFlush</td>
+<td>Cache, table.Add, <strong>table.Flush</strong>, table.Value</td>
+<td>清空 table 表所有 item</td>
+</tr>
+<tr>
+<td>TestCount</td>
+<td>Cache, table.Add, table.Value, <strong>table.Count</strong></td>
+<td>table 表中 item 数量</td>
+</tr>
+<tr>
+<td>TestDataLoader</td>
+<td>Cache, <strong>table.SetDataLoader</strong>, NewCacheItem, table.Value, table.Exists, item.Data</td>
+<td>访问不存在的 item 时会触发 loadData 回调函数</td>
+</tr>
+<tr>
+<td>TestAccessCount</td>
+<td>Cache, table.Add, table.Value, <strong>table.MostAccessed</strong></td>
+<td>返回访问频率高的 count 条 item</td>
+</tr>
+<tr>
+<td>TestCallbacks</td>
+<td>Cache, <strong>table.SetAddItemCallback</strong>, <strong>table.SetAboutToDeleteItemCallback</strong>, <strong>item.SetAboutToExpireCallback</strong>, table.Add</td>
+<td>增加、删除或超时移除情况下触发回调</td>
+</tr>
+<tr>
+<td>TestCallbackQueue</td>
+<td>Cache, item.Key, table.Add, <strong>table.AddAddedItemCallback</strong>, <strong>table.AddAboutToDeleteItemCallback</strong>, <strong>item.AddAboutToExpireCallback</strong>, <strong>table.RemoveAddedItemCallbacks</strong>, <strong>table.RemoveAboutToDeleteItemCallback</strong>, <strong>item.SetAboutToExpireCallback</strong>, <strong>item.RemoveAboutToExpireCallback</strong></td>
+<td>设置、增加、清除回调函数正常</td>
+</tr>
+<tr>
+<td>TestLogger</td>
+<td>Cache, <strong>table.SetLogger</strong>, table.Add</td>
+<td>设置 logger 正常</td>
+</tr>
+</tbody>
+</table>
 <table>
 <thead>
 <tr>
