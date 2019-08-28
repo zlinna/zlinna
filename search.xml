@@ -17,8 +17,6 @@
             
             <tag> Test </tag>
             
-            <tag> Test Framework </tag>
-            
         </tags>
       
     </entry>
@@ -125,7 +123,7 @@
       
         <tags>
             
-            <tag> Design Patterns </tag>
+            <tag> Patterns </tag>
             
         </tags>
       
@@ -159,9 +157,9 @@
       
         <tags>
             
-            <tag> algorithm </tag>
-            
             <tag> Python </tag>
+            
+            <tag> algorithm </tag>
             
         </tags>
       
@@ -195,9 +193,9 @@
       
         <tags>
             
-            <tag> algorithm </tag>
-            
             <tag> Python </tag>
+            
+            <tag> algorithm </tag>
             
         </tags>
       
