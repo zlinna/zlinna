@@ -1,6 +1,87 @@
-<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.8.0"><meta charset="utf-8"><title>I'm here.</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.png"><link href="/css/bootstrap.min.css" rel="stylesheet"><link href="/css/font-awesome.min.css" rel="stylesheet"><link href="/css/main.css" rel="stylesheet"></head><body><div class="wrap"><nav class="page-navigation"><div class="nav-container"><div class="page-header-logo"><h1 class="prince-log"><a href="/" class="home-link">zlin</a></h1></div><button type="button" data-toggle="collapse" data-target=".main-nav-items" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><ul class="collapse navbar-collapse main-nav-items"><li class="menu-item"><a href="/" target="_self">HOME</a></li><li class="menu-item"><a href="/archives/" target="_self">ARCHIVE</a></li><li class="menu-item"><a href="/gallery/" target="_self">GALLERY</a></li><li class="menu-item"><a href="/about/" target="_self">ABOUT</a></li></ul></div></nav><main class="prince-container"><div class="articles"><article class="post-block"><h2 class="post-title"><a href="/2019/05/13/指针_C++/" class="post-link">C++ 指针</a></h2><div class="post-info">May 13th 2019</div><div class="post-entry"><h2 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h2><p>指针是一个变量，其存储的是值的地址，而不是值本身。 值的地址，只需对变量应用地址运算符(&amp;)，即可得到其地址；例如home是一个变量，则&amp;home是它的地址。   *运算符被称为间接值(indirect value)或解除引用(dereferencing)运算符，将其应用于指针，可以得到该地址存储的值。例如L: mainly是一个指针，则mainly是一个地址，*mainly表示存储在该地址处的值。</p>
+<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.8.0"><meta charset="utf-8"><title>I'm here.</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.png"><link href="/css/bootstrap.min.css" rel="stylesheet"><link href="/css/font-awesome.min.css" rel="stylesheet"><link href="/css/main.css" rel="stylesheet"></head><body><div class="wrap"><nav class="page-navigation"><div class="nav-container"><div class="page-header-logo"><h1 class="prince-log"><a href="/" class="home-link">zlin</a></h1></div><button type="button" data-toggle="collapse" data-target=".main-nav-items" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><ul class="collapse navbar-collapse main-nav-items"><li class="menu-item"><a href="/" target="_self">HOME</a></li><li class="menu-item"><a href="/archives/" target="_self">ARCHIVE</a></li><li class="menu-item"><a href="/gallery/" target="_self">GALLERY</a></li><li class="menu-item"><a href="/about/" target="_self">ABOUT</a></li></ul></div></nav><main class="prince-container"><div class="articles"><article class="post-block"><h2 class="post-title"><a href="/2019/05/20/Mysql_数据库关键字/" class="post-link">常用数据库关键字</a></h2><div class="post-info">May 20th 2019</div><div class="post-entry"><table>
+<thead>
+<tr>
+<th>关键字</th>
+<th>描述</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>drop</td>
+<td>注销</td>
+<td>drop table cacaca;</td>
+</tr>
+<tr>
+<td>create</td>
+<td>创建</td>
+<td>create table cacaca( id int(11), desc varchar(255),   content text, isOK tinyint(1));</td>
+</tr>
+<tr>
+<td>delete</td>
+<td>删除</td>
+<td>delete from cacaca where id = 1;</td>
+</tr>
+<tr>
+<td>insert</td>
+<td>插入</td>
+<td>insert into cacaca values(1, ‘desc oo’, ‘content oo’);<br> insert into cacaca (desc)values(‘memeda’);</td>
+</tr>
+<tr>
+<td>update</td>
+<td>更新</td>
+<td>update cacaca set desc = “desc oooo” where id = 1;</td>
+</tr>
+<tr>
+<td>select</td>
+<td>查找</td>
+<td>select * from cacaca;</td>
+</tr>
+<tr>
+<td>alter</td>
+<td>更改</td>
+<td>alter table cacaca change desc desc text;   [ 更改列数据类型 ]<br> alter table cacaca change desc desc_t varchar(255);   [ 更改列名称 ]</td>
+</tr>
+<tr>
+<td>null</td>
+<td>空</td>
+<td>select * from cacaca where desc is [not] null;   [ 判断null使用 is[not] ]</td>
+</tr>
+<tr>
+<td>distinct</td>
+<td>去重</td>
+<td>select distinct desc from cacaca;</td>
+</tr>
+<tr>
+<td>between</td>
+<td>在…之间</td>
+<td>select * from cacaca where id [not] between 1 and 2; <br> [ 列名id的值(不)在[1, 2]之间 ]</td>
+</tr>
+<tr>
+<td>like</td>
+<td>模糊匹配</td>
+<td>select * from cacaca where desc like ‘_sec%’;<br> [ 其中 _ 匹配 一个字符，% 匹配 一个或多个 ]</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>截断</td>
+<td>select * from cacaca order by id desc limit 1,2;  <br>[ limit 前一个参数默认为0，即第一条数据，后一个参数为选择多少项。<br>该句的意思是：通过id 降序查询cacaca数据表中的第2项以及第3项 ]</td>
+</tr>
+<tr>
+<td>order by</td>
+<td>排序</td>
+<td>select * from cacaca order by id [<strong>asc</strong> or <strong>desc</strong>];  <br>[  默认asc升序，可选desc降序系列 ]</td>
+</tr>
+<tr>
+<td>group by</td>
+<td>分组</td>
+<td>select isOK,count(*) from cacaca group by isOK;（分组查询isOK总数量）</td>
+</tr>
+</tbody>
+</table>
+</div><div class="post-meta"><a href="/2019/05/20/Mysql_数据库关键字/" class="article-more">Continue Reading</a><div class="post-tags-box"><a class="tag-link" href="/tags/Mysql/">Mysql</a></div></div></article><article class="post-block"><h2 class="post-title"><a href="/2019/05/13/指针_C++/" class="post-link">C++ 指针</a></h2><div class="post-info">May 13th 2019</div><div class="post-entry"><h2 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h2><p>指针是一个变量，其存储的是值的地址，而不是值本身。 值的地址，只需对变量应用地址运算符(&amp;)，即可得到其地址；例如home是一个变量，则&amp;home是它的地址。   *运算符被称为间接值(indirect value)或解除引用(dereferencing)运算符，将其应用于指针，可以得到该地址存储的值。例如L: mainly是一个指针，则mainly是一个地址，*mainly表示存储在该地址处的值。</p>
 <h4 id="1-声明指针"><a href="#1-声明指针" class="headerlink" title="1.声明指针"></a>1.声明指针</h4><p>要声明指向特定类型的指针，请使用下面的格式：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">typeName * pointerName;  <span class="comment">// 示例： double * pn;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 指针声明的格式。传统上C程序员使用该格式：</span></span><br><span class="line"><span class="keyword">int</span> *ptr;  <span class="comment">// 强调 *ptr 是一个int类型的指针</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 而C++大多数使用下述格式：</span></span><br><span class="line"><span class="keyword">int</span>* ptr;  <span class="comment">// 强调 int* 是一种类型 -- 指向int的指针</span></span><br></pre></td></tr></table></figure></p>
-<p>其实，对于编译器来说空格所处位置没有区别，甚至可以不加空格，直接： int*ptr； 但是要知道的是，声明多个指针时，对每个指针变量名，都需要使用一个* 。</p></div><div class="post-meta"><a href="/2019/05/13/指针_C++/" class="article-more">Continue Reading</a><div class="post-tags-box"><a class="tag-link" href="/tags/C/">C++</a></div></div></article><article class="post-block"><h2 class="post-title"><a href="/2019/05/11/设计模式/" class="post-link">设计模式</a></h2><div class="post-info">May 11th 2019</div><div class="post-entry"><p>学习设计模式总结<br><img src="/设计模式学习.jpg" alt="设计模式"></p>
+<p>其实，对于编译器来说空格所处位置没有区别，甚至可以不加空格，直接： int*ptr； 但是要知道的是，声明多个指针时，对每个指针变量名，都需要使用一个* 。</p></div><div class="post-meta"><a href="/2019/05/13/指针_C++/" class="article-more">Continue Reading</a><div class="post-tags-box"><a class="tag-link" href="/tags/C/">C</a></div></div></article><article class="post-block"><h2 class="post-title"><a href="/2019/05/11/设计模式/" class="post-link">设计模式</a></h2><div class="post-info">May 11th 2019</div><div class="post-entry"><p>学习设计模式总结<br><img src="/设计模式学习.jpg" alt="设计模式"></p>
 <p>更详细的见<a href="https://design-patterns.readthedocs.io/zh_CN/latest/index.html" target="_blank" rel="noopener">图说设计模式</a></p>
 </div><div class="post-meta"><a href="/2019/05/11/设计模式/" class="article-more">Continue Reading</a><div class="post-tags-box"><a class="tag-link" href="/tags/Patterns/">Patterns</a></div></div></article><article class="post-block"><h2 class="post-title"><a href="/2019/05/11/软件可测性/" class="post-link">软件可测试性</a></h2><div class="post-info">May 11th 2019</div><div class="post-entry"><p>分析软件的可测试性，旨在加快测试进度、提高测试效率等。</p>
 <p>软件的可测试性是指被测对象具有某些特征，如：<strong>可控制、可分解、稳定、易理解、可观察</strong>等。</p>
@@ -119,8 +200,4 @@
 <p>布尔类型：True， False</p>
 <p>None</p>
 </blockquote>
-<p>不可哈希类型。可变类型，不可以作为字典的key。有：list, dict, set</p></div><div class="post-meta"><a href="/2018/12/04/python_basic/" class="article-more">Continue Reading</a><div class="post-tags-box"><a class="tag-link" href="/tags/Python/">Python</a></div></div></article><article class="post-block"><h2 class="post-title"><a href="/2018/12/03/hello-world/" class="post-link">Hello World</a></h2><div class="post-info">Dec 3rd 2018</div><div class="post-entry"><p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p></div><div class="post-meta"><a href="/2018/12/03/hello-world/" class="article-more">Continue Reading</a><div class="post-tags-box"><a class="tag-link" href="/tags/Hexo/">Hexo</a></div></div></article></div><div class="paginator"><div class="prev-wrap col-md-6 col-xs-6"><i class="fa fa-angle-double-left"></i><a href="/" class="prev-page">Previous</a></div></div></main></div><footer><div class="copyright"><p>Crafted with <i class="fa fa-heart"></i> by&nbsp;zlin&nbsp;|&nbsp;<a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yiliashaw/hexo-theme-prince" target="_blank">Prince</a> by SHAW</p></div></footer><script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.js"></script><script src="/js/script.js"></script></body></html>
+<p>不可哈希类型。可变类型，不可以作为字典的key。有：list, dict, set</p></div><div class="post-meta"><a href="/2018/12/04/python_basic/" class="article-more">Continue Reading</a><div class="post-tags-box"><a class="tag-link" href="/tags/Python/">Python</a></div></div></article></div><div class="paginator"><div class="prev-wrap col-md-6 col-xs-6"><i class="fa fa-angle-double-left"></i><a href="/" class="prev-page">Previous</a></div><div class="next-wrap col-md-6 col-xs-6"><a href="/page/3/" class="next-page">Next</a><i class="fa fa-angle-double-right"></i></div></div></main></div><footer><div class="copyright"><p>Crafted with <i class="fa fa-heart"></i> by&nbsp;zlin&nbsp;|&nbsp;<a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yiliashaw/hexo-theme-prince" target="_blank">Prince</a> by SHAW</p></div></footer><script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.js"></script><script src="/js/script.js"></script></body></html>
