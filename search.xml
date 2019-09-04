@@ -89,9 +89,9 @@
       
         <tags>
             
-            <tag> test </tag>
-            
             <tag> go </tag>
+            
+            <tag> test </tag>
             
             <tag> ginkgo </tag>
             
@@ -110,9 +110,9 @@
       
         <tags>
             
-            <tag> test </tag>
-            
             <tag> go </tag>
+            
+            <tag> test </tag>
             
         </tags>
       
@@ -129,9 +129,9 @@
       
         <tags>
             
-            <tag> test </tag>
-            
             <tag> go </tag>
+            
+            <tag> test </tag>
             
         </tags>
       
@@ -148,7 +148,7 @@
       
         <tags>
             
-            <tag> Go </tag>
+            <tag> go </tag>
             
             <tag> test </tag>
             
@@ -184,7 +184,7 @@
       
         <tags>
             
-            <tag> C++ </tag>
+            <tag> pointer </tag>
             
         </tags>
       
@@ -307,7 +307,7 @@
       
         <tags>
             
-            <tag> Git </tag>
+            <tag> git </tag>
             
         </tags>
       
@@ -341,7 +341,7 @@
       
         <tags>
             
-            <tag> Hexo </tag>
+            <tag> hexo </tag>
             
         </tags>
       
