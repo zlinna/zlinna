@@ -3,6 +3,23 @@
   
     
     <entry>
+      <title>the plan of 2019</title>
+      <link href="/2019/10/01/the%20plan%20of%202019/"/>
+      <url>/2019/10/01/the%20plan%20of%202019/</url>
+      
+        <content type="html"><![CDATA[<ul><li>September: data structures and algorithms</li><li>October(1): beego, redis, mysql, grpc demo</li><li>October(2): paas, docker, k8s, 微服务</li><li>November: personal résumé</li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> zlinna </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>Go 的位运算</title>
       <link href="/2019/09/07/go%E7%9A%84%E4%BD%8D%E8%BF%90%E7%AE%97/"/>
       <url>/2019/09/07/go%E7%9A%84%E4%BD%8D%E8%BF%90%E7%AE%97/</url>
