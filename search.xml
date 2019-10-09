@@ -199,7 +199,9 @@
             
             <tag> Go </tag>
             
-            <tag> ginkgo </tag>
+            <tag> 测试实践 </tag>
+            
+            <tag> 测试框架 </tag>
             
         </tags>
       
@@ -220,6 +222,8 @@
             
             <tag> Go </tag>
             
+            <tag> 测试实践 </tag>
+            
         </tags>
       
     </entry>
@@ -239,6 +243,8 @@
             
             <tag> Go </tag>
             
+            <tag> 测试实践 </tag>
+            
         </tags>
       
     </entry>
@@ -255,6 +261,8 @@
         <tags>
             
             <tag> Test </tag>
+            
+            <tag> 测试理论 </tag>
             
             <tag> Go </tag>
             
@@ -326,6 +334,8 @@
             
             <tag> Test </tag>
             
+            <tag> 测试理论 </tag>
+            
         </tags>
       
     </entry>
@@ -341,9 +351,9 @@
       
         <tags>
             
-            <tag> Python </tag>
-            
             <tag> algorithm </tag>
+            
+            <tag> Python </tag>
             
         </tags>
       
@@ -377,9 +387,9 @@
       
         <tags>
             
-            <tag> Python </tag>
-            
             <tag> algorithm </tag>
+            
+            <tag> Python </tag>
             
         </tags>
       
