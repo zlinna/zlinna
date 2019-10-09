@@ -3,6 +3,25 @@
   
     
     <entry>
+      <title>测试每日一题 0002</title>
+      <link href="/2019/10/10/20191010_01_test/"/>
+      <url>/2019/10/10/20191010_01_test/</url>
+      
+        <content type="html"><![CDATA[<h2><span id="q-测试人员在软件开发过程中的任务是什么">Q. 测试人员在软件开发过程中的任务是什么？</span></h2><a id="more"></a><ol><li>尽可能早的找出系统中的 Bug ；</li><li>避免软件开发过程中(重复、前期易发现)缺陷的出现；</li><li>出具相关测试分析报告，衡量软件的品质，保证系统的质量；</li><li>关注并理解用户的需求，并保证系统符合用户需求。</li></ol><p>总的目标是：确保软件的质量。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Test </tag>
+            
+            <tag> 测试理论 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>测试每日一题 0001</title>
       <link href="/2019/10/09/20191009_01_test/"/>
       <url>/2019/10/09/20191009_01_test/</url>
@@ -14,6 +33,8 @@
         <tags>
             
             <tag> Test </tag>
+            
+            <tag> 测试设计 </tag>
             
         </tags>
       
@@ -174,9 +195,9 @@
       
         <tags>
             
-            <tag> Go </tag>
-            
             <tag> Test </tag>
+            
+            <tag> Go </tag>
             
             <tag> ginkgo </tag>
             
@@ -195,9 +216,9 @@
       
         <tags>
             
-            <tag> Go </tag>
-            
             <tag> Test </tag>
+            
+            <tag> Go </tag>
             
         </tags>
       
@@ -214,9 +235,9 @@
       
         <tags>
             
-            <tag> Go </tag>
-            
             <tag> Test </tag>
+            
+            <tag> Go </tag>
             
         </tags>
       
@@ -233,9 +254,9 @@
       
         <tags>
             
-            <tag> Go </tag>
-            
             <tag> Test </tag>
+            
+            <tag> Go </tag>
             
         </tags>
       
