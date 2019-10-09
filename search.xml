@@ -17,6 +17,8 @@
             
             <tag> 测试理论 </tag>
             
+            <tag> 每日一题 </tag>
+            
         </tags>
       
     </entry>
@@ -35,6 +37,8 @@
             <tag> Test </tag>
             
             <tag> 测试设计 </tag>
+            
+            <tag> 每日一题 </tag>
             
         </tags>
       
@@ -195,13 +199,13 @@
       
         <tags>
             
-            <tag> Test </tag>
-            
             <tag> Go </tag>
             
-            <tag> 测试实践 </tag>
+            <tag> Test </tag>
             
             <tag> 测试框架 </tag>
+            
+            <tag> 测试实践 </tag>
             
         </tags>
       
@@ -218,9 +222,9 @@
       
         <tags>
             
-            <tag> Test </tag>
-            
             <tag> Go </tag>
+            
+            <tag> Test </tag>
             
             <tag> 测试实践 </tag>
             
@@ -239,9 +243,9 @@
       
         <tags>
             
-            <tag> Test </tag>
-            
             <tag> Go </tag>
+            
+            <tag> Test </tag>
             
             <tag> 测试实践 </tag>
             
@@ -260,11 +264,11 @@
       
         <tags>
             
+            <tag> Go </tag>
+            
             <tag> Test </tag>
             
             <tag> 测试理论 </tag>
-            
-            <tag> Go </tag>
             
         </tags>
       
@@ -351,9 +355,9 @@
       
         <tags>
             
-            <tag> algorithm </tag>
-            
             <tag> Python </tag>
+            
+            <tag> algorithm </tag>
             
         </tags>
       
@@ -387,9 +391,9 @@
       
         <tags>
             
-            <tag> algorithm </tag>
-            
             <tag> Python </tag>
+            
+            <tag> algorithm </tag>
             
         </tags>
       
