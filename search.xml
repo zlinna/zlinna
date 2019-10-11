@@ -7,7 +7,7 @@
       <link href="/2019/10/11/20191012_01_test/"/>
       <url>/2019/10/11/20191012_01_test/</url>
       
-        <content type="html"><![CDATA[<p>Think 3 minutes, then tell yourself.</p><a id="more"></a><table><thead><tr><th></th><th></th></tr></thead><tbody><tr><td>功能性</td><td>适应性、准确性、安全性、互操作性、依从性(顺从性)</td></tr><tr><td>可靠性</td><td>容错性、易恢复性、成熟性</td></tr><tr><td>可使用性</td><td>易理解性、易操作性、易学习性</td></tr><tr><td>效率</td><td>时间特性、资源特性</td></tr><tr><td>可维护性</td><td>稳定性、易分析性、易测试性、易变更性</td></tr><tr><td>可移植性</td><td>易安装性、适应性、易替换性、遵循性</td></tr></tbody></table>]]></content>
+        <content type="html"><![CDATA[<p><strong>-&gt;&gt;&gt; Think 3 minutes, then tell yourself.</strong></p><a id="more"></a><table><thead><tr><th></th><th></th></tr></thead><tbody><tr><td>功能性</td><td>适应性、准确性、安全性、互操作性、依从性(顺从性)</td></tr><tr><td>可靠性</td><td>容错性、易恢复性、成熟性</td></tr><tr><td>可使用性</td><td>易理解性、易操作性、易学习性</td></tr><tr><td>效率</td><td>时间特性、资源特性</td></tr><tr><td>可维护性</td><td>稳定性、易分析性、易测试性、易变更性</td></tr><tr><td>可移植性</td><td>易安装性、适应性、易替换性、遵循性</td></tr></tbody></table>]]></content>
       
       
       
@@ -28,7 +28,7 @@
       <link href="/2019/10/11/20191011_01_test/"/>
       <url>/2019/10/11/20191011_01_test/</url>
       
-        <content type="html"><![CDATA[<p>Think 3 minutes, then tell yourself.</p><a id="more"></a><p>~&gt; i. 问题提交至 JIRA 或别的缺陷管理库进行备案</p><p>~&gt; ii. 获取判断依据及标准来源：</p><pre><code>a. 查找需求规格说明书，产品说明、设计文档等。确认实际结果是否有与文档不一致的地方，提供缺陷的直接依据；b. 若没有文档依据，根据类似软件的一般特性来说明是否存在不一致的地方，确认是否是缺陷；c. 根据用户的一般使用习惯，确认是否是缺陷；d. 与设计人员、开发人员和客户代表等相关人员探讨，确认是否是缺陷。</code></pre><p>~&gt; iii. 客观严谨的向测试经理说明自己的判断理由</p><p>~&gt; iv. 等待测试经理做出最终决定，如果仍存在争议，可以通过公司政策所提供的渠道，向上级反应，并由上级做出最终决定</p>]]></content>
+        <content type="html"><![CDATA[<p><strong>-&gt;&gt;&gt; Think 3 minutes, then tell yourself.</strong></p><a id="more"></a><p>~&gt; i. 问题提交至 JIRA 或别的缺陷管理库进行备案</p><p>~&gt; ii. 获取判断依据及标准来源：</p><pre><code>a. 查找需求规格说明书，产品说明、设计文档等。确认实际结果是否有与文档不一致的地方，提供缺陷的直接依据；b. 若没有文档依据，根据类似软件的一般特性来说明是否存在不一致的地方，确认是否是缺陷；c. 根据用户的一般使用习惯，确认是否是缺陷；d. 与设计人员、开发人员和客户代表等相关人员探讨，确认是否是缺陷。</code></pre><p>~&gt; iii. 客观严谨的向测试经理说明自己的判断理由</p><p>~&gt; iv. 等待测试经理做出最终决定，如果仍存在争议，可以通过公司政策所提供的渠道，向上级反应，并由上级做出最终决定</p>]]></content>
       
       
       
@@ -49,7 +49,7 @@
       <link href="/2019/10/10/20191010_01_test/"/>
       <url>/2019/10/10/20191010_01_test/</url>
       
-        <content type="html"><![CDATA[<p>Think 3 minutes, then tell yourself.</p><a id="more"></a><ol><li>尽可能早的找出系统中的 Bug ；</li><li>避免软件开发过程中(重复、前期易发现)缺陷的出现；</li><li>出具相关测试分析报告，衡量软件的品质，保证系统的质量；</li><li>关注并理解用户的需求，并保证系统符合用户需求。</li></ol><p>总的目标是：确保软件的质量。</p>]]></content>
+        <content type="html"><![CDATA[<p><strong>-&gt;&gt;&gt; Think 3 minutes, then tell yourself.</strong></p><a id="more"></a><ol><li>尽可能早的找出系统中的 Bug ；</li><li>避免软件开发过程中(重复、前期易发现)缺陷的出现；</li><li>出具相关测试分析报告，衡量软件的品质，保证系统的质量；</li><li>关注并理解用户的需求，并保证系统符合用户需求。</li></ol><p>总的目标是：确保软件的质量。</p>]]></content>
       
       
       
@@ -70,7 +70,7 @@
       <link href="/2019/10/09/20191009_01_test/"/>
       <url>/2019/10/09/20191009_01_test/</url>
       
-        <content type="html"><![CDATA[<p>Think 3 minutes, then tell yourself.</p><a id="more"></a><p>~&gt; i. 首先查找需求、网站设计(概要和详细设计)等相关文档，分析测试需求。</p><p>~&gt; ii. 然后制定测试计划，确定测试范围和测试策略。</p><p><strong>测试策略</strong>为针对不同项目是否需要测试、测试所需人力、测试优先级、测试介入时间点等方面的确定。</p><p><strong>测试范围</strong>一般包括以下部分：</p><ul><li><a href="#function-test">功能测试</a></li><li><a href="#ui-test">界面测试</a></li><li><a href="#uperformence-test">性能测试</a></li><li><a href="#db-test">数据库测试</a></li><li><a href="#safety-test">安全性测试</a></li><li><a href="#compatibility-test">兼容性测试</a></li></ul><h3><span id="功能测试"><span id="function-test">功能测试</span></span></h3><ol><li>链接测试</li><li>提交post功能的测试</li><li>多媒体元素是否可以正确加载和显示</li><li>多语言是否能够正确显示选择的语言</li><li>…</li></ol><h3><span id="界面测试"><span id="ui-test">界面测试</span></span></h3><ol><li>页面是否风格统一、美观</li><li>页面布局是否合理，重点和热点内容是否突出</li><li>空间是否正常使用</li><li>对于必须但未安装的控件，是否提供自动下载并按照的功能</li><li>文字检查</li><li>…</li></ol><h3><span id="性能测试"><span id="uperformence-test">性能测试</span></span></h3><ol><li>压力测试</li><li>负载测试</li><li>强度测试</li></ol><h3><span id="数据库测试"><span id="db-test">数据库测试</span></span></h3><p>具体决定是否需要展开测试。数据库一般考虑连接性，对数据库的读写操作，数据内容的验证等方面。</p><h3><span id="安全性测试"><span id="safety-test">安全性测试</span></span></h3><ol><li>基本的登录功能的检查</li><li>是否存在溢出错误，导致系统崩溃或权限泄漏</li><li>相关开发语言的常见安全性文体学检查，例如：SQL 注入</li><li>如果需要高级的安全性问题，确定获得专业安全公司的帮助，外包测试，或者获取支持</li><li>…</li></ol><h3><span id="兼容性测试"><span id="compatibility-test">兼容性测试</span></span></h3><p>根据需求说明的内容，确定支持的平台组合，有：</p><ol><li>浏览器的兼容性</li><li>操作系统的兼容性</li><li>软件平台的兼容性</li><li>数据库的兼容性</li></ol><p>~&gt; iii. 开展测试，并记录缺陷，合理的安排调整测试进度，提前获取测试所需的资源，建立管理体系，例如：需求变更，风险，配置，测试文档，缺陷报告，人力资源等内容。</p><p>~&gt; iv. 定期评审，对测试(测试文档、测试用例、测试代码、测试报告、缺陷分析等)进行评估和总结，调整测试内容</p>]]></content>
+        <content type="html"><![CDATA[<p><strong>-&gt;&gt;&gt; Think 3 minutes, then tell yourself.</strong></p><a id="more"></a><p>~&gt; i. 首先查找需求、网站设计(概要和详细设计)等相关文档，分析测试需求。</p><p>~&gt; ii. 然后制定测试计划，确定测试范围和测试策略。</p><p><strong>测试策略</strong>为针对不同项目是否需要测试、测试所需人力、测试优先级、测试介入时间点等方面的确定。</p><p><strong>测试范围</strong>一般包括以下部分：</p><ul><li><a href="#function-test">功能测试</a></li><li><a href="#ui-test">界面测试</a></li><li><a href="#uperformence-test">性能测试</a></li><li><a href="#db-test">数据库测试</a></li><li><a href="#safety-test">安全性测试</a></li><li><a href="#compatibility-test">兼容性测试</a></li></ul><h3><span id="功能测试"><span id="function-test">功能测试</span></span></h3><ol><li>链接测试</li><li>提交post功能的测试</li><li>多媒体元素是否可以正确加载和显示</li><li>多语言是否能够正确显示选择的语言</li><li>…</li></ol><h3><span id="界面测试"><span id="ui-test">界面测试</span></span></h3><ol><li>页面是否风格统一、美观</li><li>页面布局是否合理，重点和热点内容是否突出</li><li>空间是否正常使用</li><li>对于必须但未安装的控件，是否提供自动下载并按照的功能</li><li>文字检查</li><li>…</li></ol><h3><span id="性能测试"><span id="uperformence-test">性能测试</span></span></h3><ol><li>压力测试</li><li>负载测试</li><li>强度测试</li></ol><h3><span id="数据库测试"><span id="db-test">数据库测试</span></span></h3><p>具体决定是否需要展开测试。数据库一般考虑连接性，对数据库的读写操作，数据内容的验证等方面。</p><h3><span id="安全性测试"><span id="safety-test">安全性测试</span></span></h3><ol><li>基本的登录功能的检查</li><li>是否存在溢出错误，导致系统崩溃或权限泄漏</li><li>相关开发语言的常见安全性文体学检查，例如：SQL 注入</li><li>如果需要高级的安全性问题，确定获得专业安全公司的帮助，外包测试，或者获取支持</li><li>…</li></ol><h3><span id="兼容性测试"><span id="compatibility-test">兼容性测试</span></span></h3><p>根据需求说明的内容，确定支持的平台组合，有：</p><ol><li>浏览器的兼容性</li><li>操作系统的兼容性</li><li>软件平台的兼容性</li><li>数据库的兼容性</li></ol><p>~&gt; iii. 开展测试，并记录缺陷，合理的安排调整测试进度，提前获取测试所需的资源，建立管理体系，例如：需求变更，风险，配置，测试文档，缺陷报告，人力资源等内容。</p><p>~&gt; iv. 定期评审，对测试(测试文档、测试用例、测试代码、测试报告、缺陷分析等)进行评估和总结，调整测试内容</p>]]></content>
       
       
       
