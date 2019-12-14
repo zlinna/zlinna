@@ -1,4 +1,85 @@
-<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.8.0"><meta charset="utf-8"><title>I'm here.</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.png"><link href="/css/bootstrap.min.css" rel="stylesheet"><link href="/css/font-awesome.min.css" rel="stylesheet"><link href="/css/main.css" rel="stylesheet"></head><body><div class="wrap"><nav class="page-navigation"><div class="nav-container"><div class="page-header-logo"><h1 class="prince-log"><a href="/" class="home-link">zlin</a></h1></div><button type="button" data-toggle="collapse" data-target=".main-nav-items" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><ul class="collapse navbar-collapse main-nav-items"><li class="menu-item"><a href="/" target="_self">HOME</a></li><li class="menu-item"><a href="/archives/" target="_self">ARCHIVE</a></li><li class="menu-item"><a href="/gallery/" target="_self">GALLERY</a></li><li class="menu-item"><a href="/about/" target="_self">ABOUT</a></li></ul></div></nav><main class="prince-container"><div class="articles"><article class="post-block"><h2 class="post-title"><a href="/2019/09/07/go的位运算/" class="post-link">Go 的位运算</a></h2><div class="post-info">Sep 7th 2019</div><div class="post-entry"><h2 id="Go-的位运算"><a href="#Go-的位运算" class="headerlink" title="Go 的位运算"></a>Go 的位运算</h2><p>在 Go 语言中支持以下几种操作位的方式：</p>
+<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.8.0"><meta charset="utf-8"><title>I'm here.</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.png"><link href="/css/bootstrap.min.css" rel="stylesheet"><link href="/css/font-awesome.min.css" rel="stylesheet"><link href="/css/main.css" rel="stylesheet"></head><body><div class="wrap"><nav class="page-navigation"><div class="nav-container"><div class="page-header-logo"><h1 class="prince-log"><a href="/" class="home-link">zlin</a></h1></div><button type="button" data-toggle="collapse" data-target=".main-nav-items" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><ul class="collapse navbar-collapse main-nav-items"><li class="menu-item"><a href="/" target="_self">HOME</a></li><li class="menu-item"><a href="/archives/" target="_self">ARCHIVE</a></li><li class="menu-item"><a href="/gallery/" target="_self">GALLERY</a></li><li class="menu-item"><a href="/about/" target="_self">ABOUT</a></li></ul></div></nav><main class="prince-container"><div class="articles"><article class="post-block"><h2 class="post-title"><a href="/2019/12/14/测试用例分类/" class="post-link">(no title)</a></h2><div class="post-info">Dec 14th 2019</div><div class="post-entry"><h1><span id="测试用例的-15-个分类">测试用例的 15 个分类</span></h1><table>
+<thead>
+<tr>
+<th>分类</th>
+<th>说明</th>
+<th>常见场景</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>能力测试</td>
+<td>确保程序的目标功能实现</td>
+<td>可当作功能（接口层）测试。前置条件、输入项（…）、内部处理流程（…）、输出项（输出参数、数据库/配置文件/全局变量更新、返回值、输出文件/报告、日志等）等</td>
+</tr>
+<tr>
+<td>容量测试</td>
+<td>发现处理大容量数据时的程序异常</td>
+<td>如，数据表存储1w条时的插入、查找、删除效率等</td>
+</tr>
+<tr>
+<td>强度测试</td>
+<td>发现在大规模负载、高强度不间断持续的数据处理中的异常</td>
+<td>内存已被占用 80% 以上，软件是否能正常运行</td>
+</tr>
+<tr>
+<td>可用性测试</td>
+<td>评估最终用户在使用软件并与软件交互时的可用性问题</td>
+<td>界面基本功能、所有按钮、异常恢复等</td>
+</tr>
+<tr>
+<td>安全性测试</td>
+<td>试图攻破程序的安全防线</td>
+<td>多线程测试、异常测试(sql注入)、异常恢复等</td>
+</tr>
+<tr>
+<td>性能测试</td>
+<td>评估程序的响应时间以及吞吐量瓶颈等</td>
+<td>根据性能指标及性能需求，针对性验证</td>
+</tr>
+<tr>
+<td>存储测试</td>
+<td>确保程序可以正确处理其对存储的需求，包括系统的存储和物理上的存储</td>
+<td>如，文件打包机制、系统最大限制 fd 个数、文件存储磁盘最大限制等</td>
+</tr>
+<tr>
+<td>配置测试</td>
+<td>检查程序是否能在推荐配置上流畅运行</td>
+<td>推荐或默认配置下运行正常，修改配置后，对应操作流程变更正确</td>
+</tr>
+<tr>
+<td>兼容性/转换测试</td>
+<td>评估新版本是否能兼容老的版本</td>
+<td>兼容老版本测试、 OS 等</td>
+</tr>
+<tr>
+<td>安装测试</td>
+<td>确保能够在所有支持的平台上安装软件</td>
+<td>linux、win、vxworks、centos等</td>
+</tr>
+<tr>
+<td>可靠性测试</td>
+<td>评估程序是否能达到规格说明书中的运行时长和 MTBF（平均故障间隔时间）要求</td>
+<td>根据需求定义的某功能项对应运行时长指标，进行针对性的可靠性测试，关注运行时长、MTBF、异常处理等</td>
+</tr>
+<tr>
+<td>服务/可维护性测试</td>
+<td>测试系统恢复相关的功能是否按设计要求实现</td>
+<td>异常恢复、维护界面（软件恢复）</td>
+</tr>
+<tr>
+<td>文档测试</td>
+<td>检验所有的用户文档是否正确</td>
+<td>文档评审</td>
+</tr>
+<tr>
+<td>过程测试</td>
+<td>对软件系统操作或维护所需涉及的流程进行评估和确定</td>
+<td>文档评审、自测、冒烟测试</td>
+</tr>
+</tbody>
+</table>
+</div><div class="post-meta"><a href="/2019/12/14/测试用例分类/" class="article-more">Continue Reading</a></div></article><article class="post-block"><h2 class="post-title"><a href="/2019/09/07/go的位运算/" class="post-link">Go 的位运算</a></h2><div class="post-info">Sep 7th 2019</div><div class="post-entry"><h2 id="Go-的位运算"><a href="#Go-的位运算" class="headerlink" title="Go 的位运算"></a>Go 的位运算</h2><p>在 Go 语言中支持以下几种操作位的方式：</p>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 在 Go 语言中支持以下几种操作位的方式：</span></span><br><span class="line"><span class="comment">        &amp;   // 位与：仅当 a 和 b 都为 1 时，操作 a&amp;b 返回 1，否则返回 0。</span></span><br><span class="line"><span class="comment">        |   // 位或：仅当 a 和 b 都为 0 时，操作 a|b 返回 0，否则返回 1。</span></span><br><span class="line"><span class="comment">        ^   // 异或：仅当 a!=b 时，操作 a^b 返回 1，否则返回 0。</span></span><br><span class="line"><span class="comment">        &amp;^  // 位与非：仅当 a=1, b=0 时，操作 a&amp;^b 返回 1，否则返回 0。</span></span><br><span class="line"><span class="comment">        &lt;&lt;  // 左移：a &lt;&lt; n，将 a 中的所有位向左偏移 n 次, 右边用0补齐</span></span><br><span class="line"><span class="comment">        &gt;&gt;  // 右移：a &gt;&gt; n; 将 a 中的所有位向右偏移 n 次, 左边用0补齐</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
 <p>详情见以下示例：<br></p></div><div class="post-meta"><a href="/2019/09/07/go的位运算/" class="article-more">Continue Reading</a><div class="post-tags-box"><a class="tag-link" href="/tags/Go/">Go</a></div></div></article><article class="post-block"><h2 class="post-title"><a href="/2019/09/05/wangwg/" class="post-link">wangwg</a></h2><div class="post-info">Sep 5th 2019</div><div class="post-entry"><p>Try again, please!</p>
 </div><div class="post-meta"><a href="/2019/09/05/wangwg/" class="article-more">Continue Reading</a><div class="post-tags-box"><a class="tag-link" href="/tags/zlinna/">zlinna</a></div></div></article><article class="post-block"><h2 class="post-title"><a href="/2019/08/28/Ginkgo测试框架/" class="post-link">Ginkgo 测试框架使用入门</a></h2><div class="post-info">Aug 28th 2019</div><div class="post-entry"><h1 id="Ginkgo-介绍"><a href="#Ginkgo-介绍" class="headerlink" title="Ginkgo 介绍"></a>Ginkgo 介绍</h1><p>Ginkgo是一个BDD风格的Go测试框架，旨在帮助您有效地编写富有表现力的综合测试。</p>
@@ -99,11 +180,4 @@
 <h4 id="1-声明指针"><a href="#1-声明指针" class="headerlink" title="1.声明指针"></a>1.声明指针</h4><p>要声明指向特定类型的指针，请使用下面的格式：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">typeName * pointerName;  <span class="comment">// 示例： double * pn;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 指针声明的格式。传统上C程序员使用该格式：</span></span><br><span class="line"><span class="keyword">int</span> *ptr;  <span class="comment">// 强调 *ptr 是一个int类型的指针</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 而C++大多数使用下述格式：</span></span><br><span class="line"><span class="keyword">int</span>* ptr;  <span class="comment">// 强调 int* 是一种类型 -- 指向int的指针</span></span><br></pre></td></tr></table></figure></p>
 <p>其实，对于编译器来说空格所处位置没有区别，甚至可以不加空格，直接： int*ptr； 但是要知道的是，声明多个指针时，对每个指针变量名，都需要使用一个* 。</p></div><div class="post-meta"><a href="/2019/05/13/指针_C++/" class="article-more">Continue Reading</a><div class="post-tags-box"><a class="tag-link" href="/tags/C/">C</a></div></div></article><article class="post-block"><h2 class="post-title"><a href="/2019/05/11/设计模式/" class="post-link">设计模式</a></h2><div class="post-info">May 11th 2019</div><div class="post-entry"><p>学习设计模式总结<br><img src="/设计模式学习.jpg" alt="设计模式"></p>
 <p>更详细的见<a href="https://design-patterns.readthedocs.io/zh_CN/latest/index.html" target="_blank" rel="noopener">图说设计模式</a></p>
-</div><div class="post-meta"><a href="/2019/05/11/设计模式/" class="article-more">Continue Reading</a><div class="post-tags-box"><a class="tag-link" href="/tags/Patterns/">Patterns</a></div></div></article><article class="post-block"><h2 class="post-title"><a href="/2019/05/11/软件可测性/" class="post-link">软件可测试性</a></h2><div class="post-info">May 11th 2019</div><div class="post-entry"><p>分析软件的可测试性，旨在加快测试进度、提高测试效率等。</p>
-<p>软件的可测试性是指被测对象具有某些特征，如：<strong>可控制、可分解、稳定、易理解、可观察</strong>等。</p>
-<p>可测性设计时需要保证的是：</p>
-<ol>
-<li>不对软件本身的功能产生影响；</li>
-<li>不产生附加的测试。</li>
-</ol>
-<p><img src="/可测试性.jpg" alt="可测试性"></p></div><div class="post-meta"><a href="/2019/05/11/软件可测性/" class="article-more">Continue Reading</a><div class="post-tags-box"><a class="tag-link" href="/tags/Test/">Test</a>, <a class="tag-link" href="/tags/测试理论/">测试理论</a></div></div></article></div><div class="paginator"><div class="next-wrap col-md-6 col-xs-6 col-md-offset-6 col-xs-offset-6"><a href="/page/2/" class="next-page">Next</a><i class="fa fa-angle-double-right"></i></div></div></main></div><footer><div class="copyright"><p>Crafted with <i class="fa fa-heart"></i> by&nbsp;zlin&nbsp;|&nbsp;<a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yiliashaw/hexo-theme-prince" target="_blank">Prince</a> by SHAW</p></div></footer><script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.js"></script><script src="/js/script.js"></script></body></html>
+</div><div class="post-meta"><a href="/2019/05/11/设计模式/" class="article-more">Continue Reading</a><div class="post-tags-box"><a class="tag-link" href="/tags/Patterns/">Patterns</a></div></div></article></div><div class="paginator"><div class="next-wrap col-md-6 col-xs-6 col-md-offset-6 col-xs-offset-6"><a href="/page/2/" class="next-page">Next</a><i class="fa fa-angle-double-right"></i></div></div></main></div><footer><div class="copyright"><p>Crafted with <i class="fa fa-heart"></i> by&nbsp;zlin&nbsp;|&nbsp;<a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yiliashaw/hexo-theme-prince" target="_blank">Prince</a> by SHAW</p></div></footer><script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.js"></script><script src="/js/script.js"></script></body></html>
