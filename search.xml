@@ -3,6 +3,23 @@
   
     
     <entry>
+      <title>2020</title>
+      <link href="/2019/12/28/2020/"/>
+      <url>/2019/12/28/2020/</url>
+      
+        <content type="html"><![CDATA[<p>技术栈扩充<br>|item|skill|-no-|<br>|-|:-|-:|<br>|语言|Python、 C|Go、 React、 Shell(sed、awk)|<br>|数据库|mysql|MongoDB|<br>|自动化||Robot Framework、 testng、 unittest|<br>|接口测试工具||jmeter、 postman、 paw|<br>|UI自动化|TF|webUI(selenium)、 AppUI(Appium)|<br>|抓包工具||fiddler、 charles、 wireshark|<br>|缓存||memcache、 redis|<br>|异步事件|CN|rabbitmq、zeromq|<br>|日志分析||elk|</p><a id="more"></a><ol><li>Robot Framework training - expand</li><li>postman training</li><li>fiddler、wireshark training</li><li>go、react training</li><li>python + redis training</li><li>python 仿 tf 实现 restful 接口测试框架 demo</li><li>MongoDB</li></ol>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> zlinna </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>测试用例分类</title>
       <link href="/2019/12/14/%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B%E5%88%86%E7%B1%BB/"/>
       <url>/2019/12/14/%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B%E5%88%86%E7%B1%BB/</url>
