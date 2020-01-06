@@ -1,1 +1,307 @@
-<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.8.0"><meta charset="utf-8"><title>I'm here.</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.png"><link href="/css/bootstrap.min.css" rel="stylesheet"><link href="/css/font-awesome.min.css" rel="stylesheet"><link href="/css/main.css" rel="stylesheet"></head><body><div class="wrap"><nav class="page-navigation"><div class="nav-container"><div class="page-header-logo"><h1 class="prince-log"><a href="/" class="home-link">zlin</a></h1></div><button type="button" data-toggle="collapse" data-target=".main-nav-items" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><ul class="collapse navbar-collapse main-nav-items"><li class="menu-item"><a href="/" target="_self">HOME</a></li><li class="menu-item"><a href="/archives/" target="_self">ARCHIVE</a></li><li class="menu-item"><a href="/gallery/" target="_self">GALLERY</a></li><li class="menu-item"><a href="/about/" target="_self">ABOUT</a></li></ul></div></nav><main class="prince-container"><div class="archive col-md-8 col-xs-12"><div class="post-item"><a href="/2019/05/20/MySQL使用及调优/" class="post-item-link"><span class="post-title col-sm-9 col-xs-12">MySQL 使用及调优</span><span class="post-date col-sm-3 col-xs-12">May 20th 2019</span></a><div class="postList-tags-box"><a class="tag-link" href="/tags/MySQL/">MySQL</a></div></div></div><aside class="sidebar col-md-4 col-xs-12"><div class="aboutme widget"><h3 class="aside-title">ABOUT ME</h3><div class="about-me-image"></div><p class="about-me-text">I miss you, i love you</p></div><div class="all-tags widget"><h3 class="aside-title">ALL TAGS</h3><div class="all-tags-box"><a class="tag-link" href="/tags/C/">C</a><a class="tag-link" href="/tags/Git/">Git</a><a class="tag-link" href="/tags/Go/">Go</a><a class="tag-link" href="/tags/Hexo/">Hexo</a><a class="tag-link" href="/tags/MySQL/">MySQL</a><a class="tag-link" href="/tags/Patterns/">Patterns</a><a class="tag-link" href="/tags/Python/">Python</a><a class="tag-link" href="/tags/Test/">Test</a><a class="tag-link" href="/tags/algorithm/">algorithm</a><a class="tag-link" href="/tags/zlinna/">zlinna</a><a class="tag-link" href="/tags/测试实践/">测试实践</a><a class="tag-link" href="/tags/测试框架/">测试框架</a><a class="tag-link" href="/tags/测试理论/">测试理论</a></div></div><div class="follow-me widget"><h3 class="aside-title">FOLLOW ME</h3><div class="follow-icons"><a href="https://github.com/zlinna" target="_blank" class="github-link"></a><a href="https://weibo.com/u/5266179798" target="_blank" class="weibo-link"></a></div></div></aside></main></div><footer><div class="copyright"><p>Crafted with <i class="fa fa-heart"></i> by&nbsp;zlin&nbsp;|&nbsp;<a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yiliashaw/hexo-theme-prince" target="_blank">Prince</a> by SHAW</p></div></footer><script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.js"></script><script src="/js/script.js"></script></body></html>
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>Tag: MySQL | I&#39;m here.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+  <meta property="og:type" content="website">
+<meta property="og:title" content="I&#39;m here.">
+<meta property="og:url" content="http://yoursite.com/tags/MySQL/index.html">
+<meta property="og:site_name" content="I&#39;m here.">
+<meta property="og:locale" content="default">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="I&#39;m here.">
+  
+    <link rel="icon" href="/images/icon.png">
+  
+  <link rel="stylesheet" href="/css/index.css">
+
+
+  <!-- 百度站長統計-->
+  
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f4e4f3d9d2532faa71e451f2ab41cbb6";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+  
+</head>
+</html>
+<div class="main height-100 flex flex-v">
+  <div class="phone-header">
+    <a to="/home" class="mobile-logo" > <img src="/images/logo.svg" /> </a>
+    <a class="menu iconfont icon-menu" onclick="toggleMenu()"></a>
+  </div>
+  <div class="main-top flex flex1">
+    <nuxt-link  to="/home" class="mobile-nav-btn iconfont icon-fenlei"></nuxt-link>
+    <!--主页上左部分-->
+    <div class="height-100 main-left  flex flex-v">
+      <div class="main-left-top flex1">
+        <a class="logo">
+          <img src="/images/logo.svg" />
+          <div class="sub-title">不疯魔不成佛</div>
+        </a>
+        <nav class="nav">
+
+  
+    
+      <a title="首页" alt="首页" v-for="(menu,index) in menus" href="/">
+        <div class="icon"><i class="iconfont icon-home"></i></div>
+        <div class="name">
+          <div class="cnname">首页</div>
+          <div class="enname">Home Page</div>
+        </div>
+      </a>
+
+    
+      <a title="归档" alt="归档" v-for="(menu,index) in menus" href="/archives">
+        <div class="icon"><i class="iconfont icon-archives"></i></div>
+        <div class="name">
+          <div class="cnname">归档</div>
+          <div class="enname">Archive Page</div>
+        </div>
+      </a>
+
+    
+      <a title="关于我" alt="关于我" v-for="(menu,index) in menus" href="/about">
+        <div class="icon"><i class="iconfont icon-about"></i></div>
+        <div class="name">
+          <div class="cnname">关于我</div>
+          <div class="enname">About Me</div>
+        </div>
+      </a>
+
+    
+  
+
+  <!--<a href="/link/">
+    <div class="icon"><i class="iconfont icon-link"></i></div>
+    <div class="name">
+      <div class="cnname">友情链接</div>
+      <div class="enname">Friends Web Link</div>
+    </div>
+  </a>-->
+</nav>
+
+      </div>
+
+      <view class="website-msg">
+        <div class="beian"><a target="_blank" href="http://www.miitbeian.gov.cn/">粤ICP备15053557号</a></div>
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <div class="beian"><span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span></div>
+        <div class="theme-drsc">PowerBy:<a href="https://hexo.io" target="_blank">Hexo</a> ThemeBy:<a href="" target="_blank">Soul</a></div>
+        <div class="copyright">Copyright &#169 <a href="mailto:d.guangying@foxmail.com">2019 CallMeSoul</a> </div>
+      </view>
+
+      <div class="social flex flex-align-center ">
+        
+          
+            
+              <a class="flex1 text-center" href="https://weibo.com/tellmesoul/home?wvr=5" target="_blank" title="weibo" alt="weibo">
+                <div class="icon relative">
+                  <i class="iconfont icon-weibo"></i>
+                </div>
+              </a>
+            
+          
+            
+              <a class="flex1 text-center" href="https://github.com/callmesoul" target="_blank" title="GitHub" alt="GitHub">
+                <div class="icon relative">
+                  <i class="iconfont icon-github"></i>
+                </div>
+              </a>
+            
+          
+            
+          
+        
+      </div>
+    </div>
+    <!--主页上右部分-->
+    
+  
+    
+    <div class="project-card project-card-continuous">
+  
+  <div class="ctnWrap">
+    <a href="/2019/05/20/MySQL使用及调优/" class="title">MySQL 使用及调优</a>
+    <section class="desc">
+  <h2 id="数据库使用、调优"><a href="#数据库使用、调优" class="headerlink" title="数据库使用、调优"></a>数据库使用、调优</h2><ol>
+<li><a href="#1">检索数据 select</a></li>
+<li><a href="#2">排序数据 order by</a></li>
+<li><a href="#3">过滤数据 where</a></li>
+<li><a href="#4">数据过滤 where and / or / in / not in</a></li>
+<li><a href="#5">模糊查询 like</a></li>
+<li><a href="#6">正则匹配 regexp</a></li>
+<li><a href="#7">创建计算字段 concat / trim</a></li>
+<li><a href="#8">使用函数</a></li>
+<li><a href="#9">分组/过滤 group by / having</a></li>
+<li><a href="#10">使用子查询</a></li>
+<li><a href="#11">联结表 join</a></li>
+<li><a href="#12">组合查询 union</a></li>
+<li><a href="#13">插入数据 insert</a></li>
+<li><a href="#14">更新和删除数据 update/delete</a></li>
+<li><a href="#15">创建和操作表 create/alter/references</a></li>
+<li><a href="#16">使用视图 view</a></li>
+<li><a href="#17">存储过程/游标/触发器/事务处理</a></li>
+<li><a href="#18">全球化和本地化/安全管理/数据库维护</a></li>
+<li><a href="#19">改善性能</a></li>
+</ol>
+
+</section>
+    <p class="sub">May 20, 2019</p>
+  </div>
+</div>
+  
+  
+
+
+  </div>
+  <div class="main-bottom">
+    <div class="music flex flex-pack-justify flex-align-center">
+      <div class="control">
+        <a onclick="preSong()"><span class="iconfont icon-shangyishou"></span></a>
+        <a onclick="playControl()"><span class="iconfont play-icon icon-kaishi1"></span></a>
+        <a onclick="nextSong()"><span class="iconfont icon-xiayishou-copy"></span></a>
+      </div>
+      <div class="msg">
+        <span class="time"></span>
+        <div class="line" ref="progress-line-warp">
+          <div class="song-msg">周杰伦 - 说好不哭</div>
+          <!--<div class="current-line" ref="progress-line">
+            <a tag="a" class="target" v-on:mousedown.prevent="mousedown"></a>
+          </div>-->
+        </div>
+        <span class="all-time"></span>
+      </div>
+      <div class="right-control">
+        <a class="order-btn flex flex-align-center" onclick="toogleShowMusicList()">
+          <span class="iconfont icon-ttpodicon"></span>
+          <span class="number flex1">3</span>
+        </a>
+      </div>
+      <audio id="audio" class="mian-audio" src="https://callmesoul-blog.oss-cn-shenzhen.aliyuncs.com/music/%E5%91%A8%E6%9D%B0%E4%BC%A6%20-%20%E8%AF%B4%E5%A5%BD%E4%B8%8D%E5%93%AD.mp3">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+  </div>
+  <div class="music-list">
+    <div id="musiclist">
+      
+        <a class="music-item flex flex-align-center" data-name="周杰伦 - 说好不哭" data-url="https://callmesoul-blog.oss-cn-shenzhen.aliyuncs.com/music/%E5%91%A8%E6%9D%B0%E4%BC%A6%20-%20%E8%AF%B4%E5%A5%BD%E4%B8%8D%E5%93%AD.mp3" onclick="changePlayIndex(0)" >
+          <span class="iconfont" class="icon-kaishi"></span>
+          <span class="title flex1">说好不哭 - 周杰伦</span>
+        </a>
+      
+        <a class="music-item flex flex-align-center" data-name="周杰伦 - 爱在西元前" data-url="https://callmesoul-blog.oss-cn-shenzhen.aliyuncs.com/music/%E5%91%A8%E6%9D%B0%E4%BC%A6%20-%20%E7%88%B1%E5%9C%A8%E8%A5%BF%E5%85%83%E5%89%8D%20%5Bmqms2%5D.mp3" onclick="changePlayIndex(1)" >
+          <span class="iconfont" class="icon-kaishi"></span>
+          <span class="title flex1">爱在西元前 - 周杰伦</span>
+        </a>
+      
+        <a class="music-item flex flex-align-center" data-name="周杰伦 - 龙拳" data-url="https://callmesoul-blog.oss-cn-shenzhen.aliyuncs.com/music/%E5%91%A8%E6%9D%B0%E4%BC%A6%20-%20%E9%BE%99%E6%8B%B3%20%5Bmqms2%5D.mp3" onclick="changePlayIndex(2)" >
+          <span class="iconfont" class="icon-kaishi"></span>
+          <span class="title flex1">龙拳 - 周杰伦</span>
+        </a>
+      
+    </div>
+  </div>
+</div>
+
+<script>
+  var playIndex = localStorage.getItem('playIndex') ? parseInt(localStorage.getItem('playIndex')) : 0
+  let musics = $('.music-item')
+  musics.eq(playIndex).addClass('active')
+  var audio = document.getElementById("audio");
+
+  $('.song-msg').html(musics[playIndex].dataset.name)
+  audio.src = musics[playIndex].dataset.url
+
+
+  var playbtn = document.getElementsByClassName("play-icon")[0];
+  var playing = false;
+  audio.loop = false;
+  audio.addEventListener('ended', function () {
+    playbtn.classList.remove("icon-kaishi")
+    playbtn.classList.add("icon-kaishi1")
+    playing = false
+  }, false);
+  audio.addEventListener('play', function () {
+    playbtn.classList.remove("icon-kaishi1")
+    playbtn.classList.add("icon-kaishi")
+    playing= true
+  }, false);
+  audio.addEventListener('pause', function () {
+    playbtn.classList.remove("icon-kaishi")
+    playbtn.classList.add("icon-kaishi1")
+    playing = false
+  }, false);
+  function toogleShowMusicList() {
+    var musiclist = document.getElementsByClassName("music-list")[0];
+    if(musiclist.className.indexOf("active") === -1){
+      musiclist.classList.add("active")
+    }else{
+      musiclist.classList.remove("active");
+    }
+  }
+
+  function playControl() {
+    if(playing){
+      audio.pause()
+    }else{
+      audio.play()
+    }
+  }
+
+  function changePlayIndex(index) {
+    if(playIndex !== index){
+      localStorage.setItem('playIndex',index)
+      playIndex = index
+      musics.removeClass('active')
+      musics.eq(playIndex).addClass('active')
+      $('.song-msg').html(musics[playIndex].dataset.name)
+      audio.src = musics[playIndex].dataset.url
+      audio.play()
+    }else{
+      playControl()
+    }
+  }
+
+  function preSong() {
+    var index
+    if(playIndex === 0){
+      index = musics.length - 1
+    }else{
+      index = playIndex - 1
+    }
+    changePlayIndex(index)
+  }
+
+  function nextSong() {
+    var index
+    if(playIndex === musics.length - 1){
+      index = 0
+    }else{
+      index = playIndex + 1
+    }
+    changePlayIndex(index)
+  }
+
+  function toggleMenu() {
+    var mainLeft = $('.main-left')
+    if(mainLeft.hasClass('active')){
+      mainLeft.removeClass('active')
+      $('.menu').removeClass('icon-close')
+      $('.menu').addClass('icon-menu')
+    }else{
+      mainLeft.addClass('active')
+      $('.menu').removeClass('icon-menu')
+      $('.menu').addClass('icon-close')
+    }
+  }
+</script>
