@@ -3,6 +3,29 @@
   
     
     <entry>
+      <title>测试用例分层机制</title>
+      <link href="/2020/02/25/%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B%E5%88%86%E5%B1%82%E6%9C%BA%E5%88%B6/"/>
+      <url>/2020/02/25/%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B%E5%88%86%E5%B1%82%E6%9C%BA%E5%88%B6/</url>
+      
+        <content type="html"><![CDATA[<p>测试用例分层机制的核心是将接口定义、测试步骤、测试用例、测试场景进行分离，单独进行描述和维护，从而尽可能地减少<code>自动化测试用例</code>的维护成本。</p><ul><li>测试用例（testcase）应该是完整且独立的，每条测试用例应该都是可以独立运行的</li><li>测试用例~/场景~是测试步骤（teststep）的<code>有序</code>集合，每一个测试步骤对于一个 API 接口的描述</li><li>测试组~/集~（testsuite）是测试用例的<code>无序</code>集合，集合中的测试用例应该都是相互独立，不存在前后依赖关系的；若确实存在先后依赖关系，可以在测试用例中完成依赖的处理，比如 <code>push case_pre</code> + <code>cur_case</code></li></ul><p><img src="/images/cases/测试用例方式.png" alt="测试用例格式" class="article-img"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> test </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 测试理论 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>Git 命令使用场景及说明</title>
       <link href="/2020/02/17/git_bitbucket/"/>
       <url>/2020/02/17/git_bitbucket/</url>
